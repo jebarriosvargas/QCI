@@ -8,21 +8,21 @@ book:
   date: "8/10/2023"
   chapters:
     - index.qmd
-    - part: "Fundamentos de la mecánica cuántica"
+    - part: "1. Fundamentos de la mecánica cuántica"
       chapters: 
         - 1_1_postulados.qmd
         - 1_2_probabilidad.qmd
-    - part: "Aplicaciones de la mecánica cuántica a sistemas sencillos"
-      chapter:
+    - part: "2. Aplicaciones de la mecánica cuántica a sistemas sencillos"
+      chapters:
         - 2_1_particulalibre.qmd
-    - part: "Átomo de hidrógeno"
-    - part: "Métodos aproximados"
-    - part: "Dos electrones: Helio"
-    - part: "Sistemas de muchos electrones"
-    - part: "Hartree-Fock"
-    - part: "Más allá de HF: la correlación electrónica"
-    - part: "Teoría de funcionales de la densidad"
-    - part: "Espectroscopía molecular"
+    - part: "3. Átomo de hidrógeno"
+    - part: "4. Métodos aproximados"
+    - part: "5. Dos electrones: Helio"
+    - part: "6. Sistemas de muchos electrones"
+    - part: "7. Hartree-Fock"
+    - part: "8. Más allá de HF: la correlación electrónica"
+    - part: "9. Teoría de funcionales de la densidad"
+    - part: "10. Espectroscopía molecular"
     - part: "Apéndice: Mathematica"
       chapters: 
         - A_1_derivadas.qmd
