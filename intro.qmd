@@ -1,5 +1,98 @@
-# Introduction
+# Fundamentos de la mecánica cuántica
 
-This is a book created from markdown and executable code.
+$$
+\definecolor{magenta}{RGB}{255,0,144}
+\newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
+\newcommand{\iprn}{\cparentesis{(}}
+\newcommand{\fprn}{\cparentesis{)}}
+$$
+
+
+## Postulados de la mecánica cuántica
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Postulado 1: $\Psi$
+
+::: {.justify}
+El estado de un sistema se describe por la función $\Psi$ de las coordenadas de las partículas y del tiempo. La función se llama función de estado o función de onda, contiene toda la información del sistema. Postulamos que $\Psi$ es función, continua y cuadrado integrable. El requerimiento de cuadrado integrable se omite cuando se tiene un espectro continuo.
+:::
+:::
+
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Postulado 2: Operadores lineales hermitianos
+::: {.justify}
+Toda propiedad física observable corresponde a un operador lineal Hermitiano. Con el fin de escribir el operador, se escribe la expresión clásica-mecánica de la observable en coordenadas cartesianas y su correspondiente momento lineal, entonces se remplaza cada coordenada $x$ por el operador $\hat{x}$ y cada componente $p_x$ por el operador $-i\hbar\partial/\partial x$.
+:::
+:::
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Postulado 3: Medición de operadores
+::: {.justify}
+Los únicos valores posibles resultantes de una medición de una propiedad observable $B$ son los eigenvalores de $b_i$ en la ecuación $\hat{B}g_i=b_i g_i$ donde $\hat{B}$ es el operador correspondiente de la propiedad $B$.
+:::
+:::
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Postulado 4: Eigenfunciones
+::: {.justify}
+Si $\hat{B}$ un operador Hermitiano que representa una propiedad observable, entonces las eigenfunciones $g_i$ de $\hat{B}$ forman un conjunto completo ortogonal.
+:::
+:::
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Postulado 5: Valor medio y probabilidad
+::: {.justify}
+Si $\Psi(q,t)$ es una función de estado normalizable de un sistema al tiempo $t$, entonces el valor medio de una cantidad física observable $B$ al tiempo $t$ es,
+\begin{align*}
+    \langle B \rangle =\int \Psi^* B \Psi d\tau = \langle \Psi | B | \Psi \rangle \,.
+\end{align*}
+y la probabilidad de medir el eigenvalor $b_i$ es,
+\begin{align*}
+    P(b_i) = \bigg| \int g_i^* \Psi d\tau \bigg|^2 = |\langle i | \Psi \rangle|^2
+\end{align*}
+donde $\hat{B}g_i=b_ig_i$.
+:::
+:::
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Postulado 6: Ecuación de Schrödinger
+::: {.justify}
+La evolución temporal de un estado sin perturbar en un sistema mecánico-cuántico esta dada por la ecuación de Schrödinger dependiente del tiempo,
+\begin{align*}
+    -\frac{\hbar}{i}\frac{\partial \Psi}{\partial t} = \hat{H} \Psi \,,
+\end{align*}
+donde $\hat{H}$ es el operador Hamiltoniano (asociado a la energía) del sistema.
+:::
+:::
+
+
+## Ejemplo: una partícula moviéndose en una dimensión
+
+### $\Psi=\Psi (x,t)$
+Postulamos la existencia de una función $\Psi$ de la coordenada de la partícula y del tiempo llamada función de estado (o función de onda) que contiene toda la información del **estado** de la partícula.
+$$
+\Psi=\Psi( x,t)
+$$
+
+::: {.column-margin}
+En la mecánica clásica el **estado** de una partícula esta determinado por su posición y velocidad en algún tiempo. Si conocemos las fuerzas sobre la partícula el futuro del **estado** de la partícula está completamente determinado por la segunda ley de Newton
+$$
+\vec{F} = m\vec{a} =\frac{d\vec{p}}{dt}
+$$
+:::
+
+
+### Ecuación de Schrödinger (dependiente del tiempo)
+
+La ecuación de Schrödinger nos dice como es la evolución temporal del estado de la partícula. En este caso la ecuación se escribe como,
+
+\begin{align*}
+    -\frac{\hbar}{i}\frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial}{\partial x} \Psi +V(x,t) \Psi \,,
+\end{align*}
+
+
+
+Po
 
 See @knuth84 for additional discussion of literate programming.

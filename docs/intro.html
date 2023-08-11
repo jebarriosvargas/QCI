@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>QCI - 1&nbsp; Introduction</title>
+<title>Química Cuántica I - 1&nbsp; Fundamentos de la mecánica cuántica</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,10 +81,13 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,7 +96,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de la mecánica cuántica</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -108,7 +111,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">QCI</a> 
+      <a href="./">Química Cuántica I</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -127,7 +130,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de la mecánica cuántica</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -148,14 +151,25 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#postulados-de-la-mecánica-cuántica" id="toc-postulados-de-la-mecánica-cuántica" class="nav-link active" data-scroll-target="#postulados-de-la-mecánica-cuántica"><span class="header-section-number">1.1</span> Postulados de la mecánica cuántica</a></li>
+  <li><a href="#ejemplo-una-partícula-moviéndose-en-una-dimensión" id="toc-ejemplo-una-partícula-moviéndose-en-una-dimensión" class="nav-link" data-scroll-target="#ejemplo-una-partícula-moviéndose-en-una-dimensión"><span class="header-section-number">1.2</span> Ejemplo: una partícula moviéndose en una dimensión</a>
+  <ul class="collapse">
+  <li><a href="#psipsi-xt" id="toc-psipsi-xt" class="nav-link" data-scroll-target="#psipsi-xt"><span class="header-section-number">1.2.1</span> <span class="math inline">\(\Psi=\Psi (x,t)\)</span></a></li>
+  <li><a href="#ecuación-de-schrödinger-dependiente-del-tiempo" id="toc-ecuación-de-schrödinger-dependiente-del-tiempo" class="nav-link" data-scroll-target="#ecuación-de-schrödinger-dependiente-del-tiempo"><span class="header-section-number">1.2.2</span> Ecuación de Schrödinger (dependiente del tiempo)</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de la mecánica cuántica</span></h1>
 </div>
 
 
@@ -170,7 +184,149 @@ div.csl-indent {
 
 </header>
 
-<p>This is a book created from markdown and executable code.</p>
+<p><span class="math display">\[
+\definecolor{magenta}{RGB}{255,0,144}
+\newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
+\newcommand{\iprn}{\cparentesis{(}}
+\newcommand{\fprn}{\cparentesis{)}}
+\]</span></p>
+<section id="postulados-de-la-mecánica-cuántica" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="postulados-de-la-mecánica-cuántica"><span class="header-section-number">1.1</span> Postulados de la mecánica cuántica</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Postulado 1: <span class="math inline">\(\Psi\)</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="justify">
+<p>El estado de un sistema se describe por la función <span class="math inline">\(\Psi\)</span> de las coordenadas de las partículas y del tiempo. La función se llama función de estado o función de onda, contiene toda la información del sistema. Postulamos que <span class="math inline">\(\Psi\)</span> es función, continua y cuadrado integrable. El requerimiento de cuadrado integrable se omite cuando se tiene un espectro continuo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Postulado 2: Operadores lineales hermitianos
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="justify">
+<p>Toda propiedad física observable corresponde a un operador lineal Hermitiano. Con el fin de escribir el operador, se escribe la expresión clásica-mecánica de la observable en coordenadas cartesianas y su correspondiente momento lineal, entonces se remplaza cada coordenada <span class="math inline">\(x\)</span> por el operador <span class="math inline">\(\hat{x}\)</span> y cada componente <span class="math inline">\(p_x\)</span> por el operador <span class="math inline">\(-i\hbar\partial/\partial x\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Postulado 3: Medición de operadores
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="justify">
+<p>Los únicos valores posibles resultantes de una medición de una propiedad observable <span class="math inline">\(B\)</span> son los eigenvalores de <span class="math inline">\(b_i\)</span> en la ecuación <span class="math inline">\(\hat{B}g_i=b_i g_i\)</span> donde <span class="math inline">\(\hat{B}\)</span> es el operador correspondiente de la propiedad <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Postulado 4: Eigenfunciones
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="justify">
+<p>Si <span class="math inline">\(\hat{B}\)</span> un operador Hermitiano que representa una propiedad observable, entonces las eigenfunciones <span class="math inline">\(g_i\)</span> de <span class="math inline">\(\hat{B}\)</span> forman un conjunto completo ortogonal.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Postulado 5: Valor medio y probabilidad
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="justify">
+<p>Si <span class="math inline">\(\Psi(q,t)\)</span> es una función de estado normalizable de un sistema al tiempo <span class="math inline">\(t\)</span>, entonces el valor medio de una cantidad física observable <span class="math inline">\(B\)</span> al tiempo <span class="math inline">\(t\)</span> es, <span class="math display">\[\begin{align*}
+    \langle B \rangle =\int \Psi^* B \Psi d\tau = \langle \Psi | B | \Psi \rangle \,.
+\end{align*}\]</span> y la probabilidad de medir el eigenvalor <span class="math inline">\(b_i\)</span> es, <span class="math display">\[\begin{align*}
+    P(b_i) = \bigg| \int g_i^* \Psi d\tau \bigg|^2 = |\langle i | \Psi \rangle|^2
+\end{align*}\]</span> donde <span class="math inline">\(\hat{B}g_i=b_ig_i\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Postulado 6: Ecuación de Schrödinger
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="justify">
+<p>La evolución temporal de un estado sin perturbar en un sistema mecánico-cuántico esta dada por la ecuación de Schrödinger dependiente del tiempo, <span class="math display">\[\begin{align*}
+    -\frac{\hbar}{i}\frac{\partial \Psi}{\partial t} = \hat{H} \Psi \,,
+\end{align*}\]</span> donde <span class="math inline">\(\hat{H}\)</span> es el operador Hamiltoniano (asociado a la energía) del sistema.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-una-partícula-moviéndose-en-una-dimensión" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="ejemplo-una-partícula-moviéndose-en-una-dimensión"><span class="header-section-number">1.2</span> Ejemplo: una partícula moviéndose en una dimensión</h2>
+<section id="psipsi-xt" class="level3 page-columns page-full" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="psipsi-xt"><span class="header-section-number">1.2.1</span> <span class="math inline">\(\Psi=\Psi (x,t)\)</span></h3>
+<p>Postulamos la existencia de una función <span class="math inline">\(\Psi\)</span> de la coordenada de la partícula y del tiempo llamada función de estado (o función de onda) que contiene toda la información del <strong>estado</strong> de la partícula. <span class="math display">\[
+\Psi=\Psi( x,t)
+\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>En la mecánica clásica el <strong>estado</strong> de una partícula esta determinado por su posición y velocidad en algún tiempo. Si conocemos las fuerzas sobre la partícula el futuro del <strong>estado</strong> de la partícula está completamente determinado por la segunda ley de Newton <span class="math display">\[
+\vec{F} = m\vec{a} =\frac{d\vec{p}}{dt}
+\]</span></p>
+</div></div></section>
+<section id="ecuación-de-schrödinger-dependiente-del-tiempo" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="ecuación-de-schrödinger-dependiente-del-tiempo"><span class="header-section-number">1.2.2</span> Ecuación de Schrödinger (dependiente del tiempo)</h3>
+<p>La ecuación de Schrödinger nos dice como es la evolución temporal del estado de la partícula. En este caso la ecuación se escribe como,</p>
+<p><span class="math display">\[\begin{align*}
+    -\frac{\hbar}{i}\frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \frac{\partial}{\partial x} \Psi +V(x,t) \Psi \,,
+\end{align*}\]</span></p>
+<p>Po</p>
 <p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
 
 
@@ -179,6 +335,8 @@ div.csl-indent {
 Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
 </div>
 </div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
