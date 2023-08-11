@@ -8,7 +8,10 @@ book:
   date: "8/10/2023"
   chapters:
     - index.qmd
-    - intro.qmd
+    - part: "Fundamentos de la mecánica cuántica"
+      chapters: 
+        - 1_postulados.qmd
+        - 2_probabilidad.qmd
     - summary.qmd
     - references.qmd
 
