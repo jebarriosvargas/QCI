@@ -1,4 +1,3 @@
 # Un poco de estadística y probabilidad
-4330
 
-2_probab
+Estadística de edades

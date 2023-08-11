@@ -10,8 +10,25 @@ book:
     - index.qmd
     - part: "Fundamentos de la mecánica cuántica"
       chapters: 
-        - 1_postulados.qmd
-        - 2_probabilidad.qmd
+        - 1_1_postulados.qmd
+        - 1_2_probabilidad.qmd
+    - part: "Aplicaciones de la mecánica cuántica a sistemas sencillos"
+      chapter:
+        - 2_1_particulalibre.qmd
+    - part: "Átomo de hidrógeno"
+    - part: "Métodos aproximados"
+    - part: "Dos electrones: Helio"
+    - part: "Sistemas de muchos electrones"
+    - part: "Hartree-Fock"
+    - part: "Más allá de HF: la correlación electrónica"
+    - part: "Teoría de funcionales de la densidad"
+    - part: "Espectroscopía molecular"
+    - part: "Apéndice: Mathematica"
+      chapters: 
+        - A_1_derivadas.qmd
+    - part: "Apéndice: python"
+      chapters: 
+        - B_1_pycalculadora.qmd
     - summary.qmd
     - references.qmd
 

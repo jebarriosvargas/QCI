@@ -16,7 +16,7 @@
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "5  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever."
   },
@@ -47,5 +47,61 @@
     "title": "1  Fundamentos de la mecánica cuántica",
     "section": "1.2 Ejemplo: una partícula moviéndose en una dimensión",
     "text": "1.2 Ejemplo: una partícula moviéndose en una dimensión\n\n1.2.1 \\(\\Psi=\\Psi (x,t)\\)\nPostulamos la existencia de una función \\(\\Psi\\) de la coordenada de la partícula y del tiempo llamada función de estado (o función de onda) que contiene toda la información del estado de la partícula. \\[\n\\Psi=\\Psi( x,t)\n\\]\n\n\nEn la mecánica clásica el estado de una partícula esta determinado por su posición y velocidad en algún tiempo. Si conocemos las fuerzas sobre la partícula el futuro del estado de la partícula está completamente determinado por la segunda ley de Newton \\[\n\\vec{F} = m\\vec{a} =\\frac{d\\vec{p}}{dt}\n\\]\n\n\n1.2.2 Ecuación de Schrödinger (dependiente del tiempo)\nLa ecuación de Schrödinger nos dice como es la evolución temporal del estado de la partícula. En este caso la ecuación se escribe como,\n\\[\\begin{align*}\n    -\\frac{\\hbar}{i}\\frac{\\partial \\Psi}{\\partial t} = -\\frac{\\hbar^2}{2m} \\frac{\\partial}{\\partial x} \\Psi +V(x,t) \\Psi \\,,\n\\end{align*}\\]\nPo\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "1_postulados.html#popostulastulados-de-la-mecánica-cuántica",
+    "href": "1_postulados.html#popostulastulados-de-la-mecánica-cuántica",
+    "title": "1  Fundamentos de la mecánica cuántica",
+    "section": "1.1 Popostulastulados de la mecánica cuántica",
+    "text": "1.1 Popostulastulados de la mecánica cuántica\n\n\n\n\n\n\nPostulado 1: \\(\\Psi\\)\n\n\n\n\n\n\nEl estado de un sistema se describe por la función \\(\\Psi\\) de las coordenadas de las partículas y del tiempo. La función se llama función de estado o función de onda, contiene toda la información del sistema. Postulamos que \\(\\Psi\\) es función, continua y cuadrado integrable. El requerimiento de cuadrado integrable se omite cuando se tiene un espectro continuo.\n\n\n\n\n\n\n\n\n\n\nPostulado 2: Operadores lineales hermitianos\n\n\n\n\n\n\nToda propiedad física observable corresponde a un operador lineal Hermitiano. Con el fin de escribir el operador, se escribe la expresión clásica-mecánica de la observable en coordenadas cartesianas y su correspondiente momento lineal, entonces se remplaza cada coordenada \\(x\\) por el operador \\(\\hat{x}\\) y cada componente \\(p_x\\) por el operador \\(-i\\hbar\\partial/\\partial x\\).\n\n\n\n\n\n\n\n\n\n\nPostulado 3: Medición de operadores\n\n\n\n\n\n\nLos únicos valores posibles resultantes de una medición de una propiedad observable \\(B\\) son los eigenvalores de \\(b_i\\) en la ecuación \\(\\hat{B}g_i=b_i g_i\\) donde \\(\\hat{B}\\) es el operador correspondiente de la propiedad \\(B\\).\n\n\n\n\n\n\n\n\n\n\nPostulado 4: Eigenfunciones\n\n\n\n\n\n\nSi \\(\\hat{B}\\) un operador Hermitiano que representa una propiedad observable, entonces las eigenfunciones \\(g_i\\) de \\(\\hat{B}\\) forman un conjunto completo ortogonal.\n\n\n\n\n\n\n\n\n\n\nPostulado 5: Valor medio y probabilidad\n\n\n\n\n\n\nSi \\(\\Psi(q,t)\\) es una función de estado normalizable de un sistema al tiempo \\(t\\), entonces el valor medio de una cantidad física observable \\(B\\) al tiempo \\(t\\) es, \\[\\begin{align*}\n    \\langle B \\rangle =\\int \\Psi^* B \\Psi d\\tau = \\langle \\Psi | B | \\Psi \\rangle \\,.\n\\end{align*}\\] y la probabilidad de medir el eigenvalor \\(b_i\\) es, \\[\\begin{align*}\n    P(b_i) = \\bigg| \\int g_i^* \\Psi d\\tau \\bigg|^2 = |\\langle i | \\Psi \\rangle|^2\n\\end{align*}\\] donde \\(\\hat{B}g_i=b_ig_i\\).\n\n\n\n\n\n\n\n\n\n\nPostulado 6: Ecuación de Schrödinger\n\n\n\n\n\n\nLa evolución temporal de un estado sin perturbar en un sistema mecánico-cuántico esta dada por la ecuación de Schrödinger dependiente del tiempo, \\[\\begin{align*}\n    -\\frac{\\hbar}{i}\\frac{\\partial \\Psi}{\\partial t} = \\hat{H} \\Psi \\,,\n\\end{align*}\\] donde \\(\\hat{H}\\) es el operador Hamiltoniano (asociado a la energía) del sistema."
+  },
+  {
+    "objectID": "1_postulados.html#ejemplo-una-partícula-moviéndose-en-una-dimensión",
+    "href": "1_postulados.html#ejemplo-una-partícula-moviéndose-en-una-dimensión",
+    "title": "1  Fundamentos de la mecánica cuántica",
+    "section": "1.2 Ejemplo: una partícula moviéndose en una dimensión",
+    "text": "1.2 Ejemplo: una partícula moviéndose en una dimensión\n\n1.2.1 \\(\\Psi = \\Psi(x,t)\\)\nPostulamos la existencia de una función \\(\\Psi\\) de la coordenada de la partícula y del tiempo llamada función de estado (o función de onda) que contiene toda la información del estado de la partícula. \\[\n\\Psi=\\Psi \\iprn x,t \\fprn\n\\]\n\n\nEn la mecánica clásica el estado de una partícula esta determinado por su posición y velocidad en algún tiempo. Si conocemos las fuerzas sobre la partícula el futuro del estado de la partícula está completamente determinado por la segunda ley de Newton \\[\n\\vec{F} = m\\vec{a} =\\frac{d\\vec{p}}{dt}\n\\]\n\n\n1.2.2 Ecuación de Schrödinger (dependiente del tiempo)\nLa ecuación de Schrödinger nos dice como es la evolución temporal del estado de la partícula. En este caso la ecuación se escribe como,\n\\[\\begin{align*}\n    -\\frac{\\hbar}{i}\\frac{\\partial}{\\partial t} \\Psi\\iprn x,t \\fprn= -\\frac{\\hbar^2}{2m} \\frac{\\partial}{\\partial x} \\Psi \\iprn x,t \\fprn +V\\iprn x,t \\fprn \\Psi \\iprn x,t \\fprn \\,,\n\\end{align*}\\]\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "2_probabilidad.html",
+    "href": "2_probabilidad.html",
+    "title": "2  Un poco de estadística y probabilidad",
+    "section": "",
+    "text": "Estadística de edades"
+  },
+  {
+    "objectID": "A_1_derivadas.html",
+    "href": "A_1_derivadas.html",
+    "title": "3  Mathematica",
+    "section": "",
+    "text": "Leer https://www.wolfram.com/language/fast-introduction-for-math-students/es/ y contestar."
+  },
+  {
+    "objectID": "B_1_pycalculadora.html",
+    "href": "B_1_pycalculadora.html",
+    "title": "4  Python",
+    "section": "",
+    "text": "Ejemplo de python como calculadora."
+  },
+  {
+    "objectID": "1_1_postulados.html#popostulastulados-de-la-mecánica-cuántica",
+    "href": "1_1_postulados.html#popostulastulados-de-la-mecánica-cuántica",
+    "title": "1  Fundamentos de la mecánica cuántica",
+    "section": "1.1 Popostulastulados de la mecánica cuántica",
+    "text": "1.1 Popostulastulados de la mecánica cuántica\n\n\n\n\n\n\nPostulado 1: \\(\\Psi\\)\n\n\n\n\n\n\nEl estado de un sistema se describe por la función \\(\\Psi\\) de las coordenadas de las partículas y del tiempo. La función se llama función de estado o función de onda, contiene toda la información del sistema. Postulamos que \\(\\Psi\\) es función, continua y cuadrado integrable. El requerimiento de cuadrado integrable se omite cuando se tiene un espectro continuo.\n\n\n\n\n\n\n\n\n\n\nPostulado 2: Operadores lineales hermitianos\n\n\n\n\n\n\nToda propiedad física observable corresponde a un operador lineal Hermitiano. Con el fin de escribir el operador, se escribe la expresión clásica-mecánica de la observable en coordenadas cartesianas y su correspondiente momento lineal, entonces se remplaza cada coordenada \\(x\\) por el operador \\(\\hat{x}\\) y cada componente \\(p_x\\) por el operador \\(-i\\hbar\\partial/\\partial x\\).\n\n\n\n\n\n\n\n\n\n\nPostulado 3: Medición de operadores\n\n\n\n\n\n\nLos únicos valores posibles resultantes de una medición de una propiedad observable \\(B\\) son los eigenvalores de \\(b_i\\) en la ecuación \\(\\hat{B}g_i=b_i g_i\\) donde \\(\\hat{B}\\) es el operador correspondiente de la propiedad \\(B\\).\n\n\n\n\n\n\n\n\n\n\nPostulado 4: Eigenfunciones\n\n\n\n\n\n\nSi \\(\\hat{B}\\) un operador Hermitiano que representa una propiedad observable, entonces las eigenfunciones \\(g_i\\) de \\(\\hat{B}\\) forman un conjunto completo ortogonal.\n\n\n\n\n\n\n\n\n\n\nPostulado 5: Valor medio y probabilidad\n\n\n\n\n\n\nSi \\(\\Psi(q,t)\\) es una función de estado normalizable de un sistema al tiempo \\(t\\), entonces el valor medio de una cantidad física observable \\(B\\) al tiempo \\(t\\) es, \\[\\begin{align*}\n    \\langle B \\rangle =\\int \\Psi^* B \\Psi d\\tau = \\langle \\Psi | B | \\Psi \\rangle \\,.\n\\end{align*}\\] y la probabilidad de medir el eigenvalor \\(b_i\\) es, \\[\\begin{align*}\n    P(b_i) = \\bigg| \\int g_i^* \\Psi d\\tau \\bigg|^2 = |\\langle i | \\Psi \\rangle|^2\n\\end{align*}\\] donde \\(\\hat{B}g_i=b_ig_i\\).\n\n\n\n\n\n\n\n\n\n\nPostulado 6: Ecuación de Schrödinger\n\n\n\n\n\n\nLa evolución temporal de un estado sin perturbar en un sistema mecánico-cuántico esta dada por la ecuación de Schrödinger dependiente del tiempo, \\[\\begin{align*}\n    -\\frac{\\hbar}{i}\\frac{\\partial \\Psi}{\\partial t} = \\hat{H} \\Psi \\,,\n\\end{align*}\\] donde \\(\\hat{H}\\) es el operador Hamiltoniano (asociado a la energía) del sistema."
+  },
+  {
+    "objectID": "1_1_postulados.html#ejemplo-una-partícula-moviéndose-en-una-dimensión",
+    "href": "1_1_postulados.html#ejemplo-una-partícula-moviéndose-en-una-dimensión",
+    "title": "1  Fundamentos de la mecánica cuántica",
+    "section": "1.2 Ejemplo: una partícula moviéndose en una dimensión",
+    "text": "1.2 Ejemplo: una partícula moviéndose en una dimensión\n\n1.2.1 \\(\\Psi = \\Psi(x,t)\\)\nPostulamos la existencia de una función \\(\\Psi\\) de la coordenada de la partícula y del tiempo llamada función de estado (o función de onda) que contiene toda la información del estado de la partícula. \\[\n\\Psi=\\Psi \\iprn x,t \\fprn\n\\]\n\n\nEn la mecánica clásica el estado de una partícula esta determinado por su posición y velocidad en algún tiempo. Si conocemos las fuerzas sobre la partícula el futuro del estado de la partícula está completamente determinado por la segunda ley de Newton \\[\n\\vec{F} = m\\vec{a} =\\frac{d\\vec{p}}{dt}\n\\]\n\n\n1.2.2 Ecuación de Schrödinger (dependiente del tiempo)\nLa ecuación de Schrödinger nos dice como es la evolución temporal del estado de la partícula. En este caso la ecuación se escribe como,\n\\[\\begin{align*}\n    -\\frac{\\hbar}{i}\\frac{\\partial}{\\partial t} \\Psi\\iprn x,t \\fprn= -\\frac{\\hbar^2}{2m} \\frac{\\partial}{\\partial x} \\Psi \\iprn x,t \\fprn +V\\iprn x,t \\fprn \\Psi \\iprn x,t \\fprn \\,,\n\\end{align*}\\]\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "1_2_probabilidad.html",
+    "href": "1_2_probabilidad.html",
+    "title": "2  Un poco de estadística y probabilidad",
+    "section": "",
+    "text": "Estadística de edades"
   }
 ]
