@@ -72,9 +72,9 @@
   {
     "objectID": "A_1_derivadas.html",
     "href": "A_1_derivadas.html",
-    "title": "3  Mathematica",
+    "title": "4  Mathematica",
     "section": "",
-    "text": "Leer https://www.wolfram.com/language/fast-introduction-for-math-students/es/ y contestar."
+    "text": "Leer https://www.wolfram.com/language/fast-introduction-for-math-students/es/.\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica."
   },
   {
     "objectID": "B_1_pycalculadora.html",
@@ -110,5 +110,54 @@
     "title": "3  Partícula libre",
     "section": "",
     "text": "NONE"
+  },
+  {
+    "objectID": "A_1_derivadas.html#derivada-de-una-función",
+    "href": "A_1_derivadas.html#derivada-de-una-función",
+    "title": "4  Mathematica",
+    "section": "4.1 Derivada de una función",
+    "text": "4.1 Derivada de una función\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica.\n\n\nLa interacción con Mathematica es a través de celdas. Si en la celda tecleamos  nos permite dar instrucciones que interpreta el servicio de Wolfram Alpha.\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica.\n\n\nCon el fin de tener los símbolos matemáticos a la mano es posible abrir una ventana con ellos seleccionando en el menu\n\nPalettes &gt; Basic Math Assistant\n\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica.\n\n\nDefinimos funciones utilizando f[x_] :=, por ejemplo\n\nf[x_] := 1 + 2 x\n\nAhora es posible evaluar dicha función en algún valor encerrado entre corchetes\n\nf[2]\n\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica.\n\n\nAhora calculemos la derivada de la función que definimos. Tenemos dos opciones, utilizando el comando D[ ]\n\nD[f[x],x]\n\ny utilizando una prima\n\nf’[x]\n\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica."
+  },
+  {
+    "objectID": "A_1_derivadas.html#integrales",
+    "href": "A_1_derivadas.html#integrales",
+    "title": "4  Mathematica",
+    "section": "4.2 Integrales",
+    "text": "4.2 Integrales\nAhora integremos la función con el comando Integrate[ ]\n\nIntegrate[f[x],x]\n\nTambién podemos integrar con el símbolo de la integral \\(\\int\\) el cual podemos escribir tecleando Esc-intt-Esc\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica.\n\n\nSi queremos una integral definida tenemos la opción de escribir Esc-dintt-Esc y escribir los límites de integración, o utilizando el comando NIntegrate\n\nNIntegrate[f[x], {x, 0, 2}]\n\n\n\n\nVentana de un cuaderno de trabajo de Mathemathica."
+  },
+  {
+    "objectID": "A_1_derivadas.html#derivadas-de-funciones-multivariables",
+    "href": "A_1_derivadas.html#derivadas-de-funciones-multivariables",
+    "title": "4  Mathematica",
+    "section": "4.3 Derivadas de funciones multivariables",
+    "text": "4.3 Derivadas de funciones multivariables\n\\[\n\\frac{\\partial }{\\partial y}\\frac{\\partial }{\\partial z} x^3z+2 y^2 x + y z^3\n\\]\n\nD[x^3 z + 2 y^2 x + y z^3, y, z]"
+  },
+  {
+    "objectID": "A_1_derivadas.html#derivadas-e-integrales-de-funciones-de-varias-variables",
+    "href": "A_1_derivadas.html#derivadas-e-integrales-de-funciones-de-varias-variables",
+    "title": "4  Mathematica",
+    "section": "4.3 Derivadas e integrales de funciones de varias variables",
+    "text": "4.3 Derivadas e integrales de funciones de varias variables\n\\[\n\\frac{\\partial }{\\partial y}\\bigg( \\frac{\\partial }{\\partial z} \\bigg( x^3z+2 y^2 x + y z^3 \\bigg)\\bigg)\n\\]\n\nD[x^3 z + 2 y^2 x + y z^3, y, z]\n\nVer https://www.wolfram.com/language/fast-introduction-for-math-students/es/multivariate-calculus/"
+  },
+  {
+    "objectID": "B_1_pycalculadora.html#colab",
+    "href": "B_1_pycalculadora.html#colab",
+    "title": "5  Python",
+    "section": "5.1 Colab",
+    "text": "5.1 Colab\n\nColab es un servicio de google en el cual podemos utilizar una computadora virtualmente a la cual podemos darle instrucciones mediante un cuaderno de trabajo (notebook). En el cuaderno de trabajo hay dos tipos de recuadros de instrucciones, llamadas celdas (cells): celdas de código (code) y celdas de texto (text). En las celdas de código se pueden escribir instrucciones del idioma de programación de python y en las celdas de texto se puede escribir texto en idioma markdown.\n\nComenzamos iniciando al servicio con una cuenta de Google en el sitio https://colab.research.google.com/.\n\n\n\nPágina de inicio de Colab de google.\n\n\nCreamos un nuevo cuaderno de trabajo.\n\n\n\nNuevo cuaderno de trabajo de Colab de google.\n\n\nAhora tenemos un cuaderno de trabajo nuevo.\n\n\n\nNuevo cuaderno de trabajo de Colab de google.\n\n\n\nPython es un idioma de programación interpretado que significa que como se escribe se lee. Ocupemos el servicio de Colab para realizar operaciones como una calculadora.\n\n\n5.1.1 Aritmética\n\n5.1.1.1 Suma\nIngresamos la operación en una celda de código y tecleamos Shift-Enter y obtendriamos lo siguiente\n\n5+2\n\n7\n\n\n\n\n5.1.1.2 Resta\n\n5+2\n\n7\n\n\n\n\n5.1.1.3 Multiplicación\n\n5*2\n\n10\n\n\n\n\n5.1.1.4 División\n\n5/2\n\n2.5\n\n\n\n\n\n5.1.2 Idioma de programación\nAl ser python un idioma de programación esta dotado de una semántica de variables y estructuras de control. Las variables pueden ser:\n\n\n\nTipo (inglés)\nEjemplo\n\n\n\n\nentero (int)\n5\n\n\ndecimal (float)\n5.5\n\n\ncomplejo (complex)\n5+2J\n\n\nContenedoras de datos\n\n\n\nlista (list)\n[1,2,3]\n\n\ndupla (tuple)\n(1,2)\n\n\ndiccionario (dic)\n{\"H\":1}\n\n\nconjunto (set)\n{1, 2, 3}\n\n\n\nUsando la función type( ) uno puede ver de que tipo son las variables. Las distintas variables pueden ser guardadas con algún nombre mediante la asignación. Por ejemplo, guardemos el número complejo 1+1J con el nombre var\n\nvar = 1+1J\n\nLa ventaja de nombrar dicho número complejo como var es que podemos operarlo ahora haciendo referencia al nombre\n\n2*var\n\n(2+2j)\n\n\nUna ventaja de python es que ya se tiene mucho desarrollo por la comunidad, por lo que tareas complicadas pueden ser simples. Los desarrollos se guardan en bibliotecas (libraries) y para el caso de tareas científicas es recurrente utilizar las bibliotecas numpy, scipy y matplotlib. Con el fin de cargar la información de esas tres bibliotecas escribimos:\n\nfrom pylab import *\n\nLa biblioteca tiene un tipo de variable especial llamada numpy.ndarray que es muy similar a un vector, tiene componentes y se tienen definidas sus operaciones. La forma de declarar un numpy.array es utilizando la función array\n\narray([1,2,3])\n\narray([1, 2, 3])&lt;"
+  },
+  {
+    "objectID": "A_1_derivadas.html#operaciones-de-vectores-gradientes-y-divergencia",
+    "href": "A_1_derivadas.html#operaciones-de-vectores-gradientes-y-divergencia",
+    "title": "4  Mathematica",
+    "section": "4.4 Operaciones de vectores, gradientes y divergencia",
+    "text": "4.4 Operaciones de vectores, gradientes y divergencia\nVer https://www.wolfram.com/language/fast-introduction-for-math-students/es/vector-analysis-and-visualization/"
+  },
+  {
+    "objectID": "A_1_derivadas.html#matrices-y-algebra-lineal",
+    "href": "A_1_derivadas.html#matrices-y-algebra-lineal",
+    "title": "4  Mathematica",
+    "section": "4.5 Matrices y algebra lineal",
+    "text": "4.5 Matrices y algebra lineal\nhttps://www.wolfram.com/language/fast-introduction-for-math-students/es/matrices-and-linear-algebra/"
   }
 ]

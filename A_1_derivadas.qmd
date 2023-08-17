@@ -1,6 +1,73 @@
 # Mathematica
 
-Leer <https://www.wolfram.com/language/fast-introduction-for-math-students/es/> y contestar.
 
 
+Leer <https://www.wolfram.com/language/fast-introduction-for-math-students/es/>.
 
+## Derivada de una función
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/NotebookMathematica.png){fig-align="left" width=400}
+
+La interacción con Mathematica es a través de celdas. Si en la celda tecleamos {{< kbd = >}} nos permite dar instrucciones que interpreta el servicio de Wolfram Alpha.
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/WolframAlphaMathematica.png){fig-align="left" width=400}
+
+Con el fin de tener los símbolos matemáticos a la mano es posible abrir una ventana con ellos seleccionando en el menu
+
+> Palettes > Basic Math Assistant
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/BasicMathAssistant.png){fig-align="left" width=250}
+
+Definimos funciones utilizando **f[x_] :=**, por ejemplo
+
+> f[x_] := 1 + 2 x
+
+Ahora es posible evaluar dicha función en algún valor encerrado entre corchetes
+
+> f[2]
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/funcionevaluadaenvalor.png){fig-align="left" width=400}
+
+Ahora calculemos la derivada de la función que definimos. Tenemos dos opciones, utilizando el comando **D[ ]**
+
+> D[f[x],x]
+
+y utilizando una prima
+
+> f'[x]
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/Derivada.png){fig-align="left" width=400}
+
+## Integrales
+
+Ahora integremos la función con el comando **Integrate[ ]**
+
+> Integrate[f[x],x]
+
+También podemos integrar con el símbolo de la integral $\int$ el cual podemos escribir tecleando {{< kbd Esc-intt-Esc >}}
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/IntegralIndefinida.png){fig-align="left" width=400}
+
+Si queremos una integral definida tenemos la opción de escribir {{< kbd Esc-dintt-Esc >}} y escribir los límites de integración, o utilizando el comando NIntegrate
+
+> NIntegrate[f[x], {x, 0, 2}]
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/IntegralDefinida.png){fig-align="left" width=400}
+
+## Derivadas e integrales de funciones de varias variables
+
+$$
+\frac{\partial }{\partial y}\bigg( \frac{\partial }{\partial z} \bigg( x^3z+2 y^2 x + y z^3 \bigg)\bigg)
+$$
+
+> D[x^3 z + 2 y^2 x + y z^3, y, z]
+
+Ver <https://www.wolfram.com/language/fast-introduction-for-math-students/es/multivariate-calculus/>
+
+## Operaciones de vectores, gradientes y divergencia
+
+Ver <https://www.wolfram.com/language/fast-introduction-for-math-students/es/vector-analysis-and-visualization/>
+
+## Matrices y algebra lineal
+
+<https://www.wolfram.com/language/fast-introduction-for-math-students/es/matrices-and-linear-algebra/>

@@ -36,8 +36,9 @@ bibliography: references.bib
 
 format:
   html:
-    light: flatly
-    dark: darkly
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
   pdf:
     documentclass: scrreprt

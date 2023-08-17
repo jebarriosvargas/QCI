@@ -1,3 +1,98 @@
 # Python
 
-Ejemplo de python como calculadora.
+## Colab
+
+:::{.justify}
+Colab es un servicio de google en el cual podemos utilizar una computadora virtualmente a la cual podemos darle instrucciones mediante un cuaderno de trabajo (*notebook*). En el cuaderno de trabajo hay dos tipos de recuadros de instrucciones, llamadas celdas (*cells*): celdas de código (*code*) y celdas de texto (*text*). En las celdas de código se pueden escribir instrucciones del idioma de programación de python y en las celdas de texto se puede escribir texto en idioma markdown.
+:::
+
+Comenzamos iniciando al servicio con una cuenta de Google en el sitio <https://colab.research.google.com/>.
+
+![Página de inicio de Colab de google.](img/iniciocolab.png){fig-align="left" width=400}
+
+Creamos un nuevo cuaderno de trabajo.
+
+![Nuevo cuaderno de trabajo de Colab de google.](img/nuevonotebookcolab.png){fig-align="left" width=400}
+
+Ahora tenemos un cuaderno de trabajo nuevo.
+
+![Nuevo cuaderno de trabajo de Colab de google.](img/inicionotebook.png){fig-align="left" width=400}
+
+:::{.justify}
+Python es un idioma de programación interpretado que significa que como se escribe se lee. Ocupemos el servicio de Colab para realizar operaciones como una calculadora. 
+:::
+
+### Aritmética
+
+#### Suma
+Ingresamos la operación en una celda de código y tecleamos {{< kbd Shift-Enter >}} y obtendriamos lo siguiente
+```{python}
+#| code-fold: false
+5+2
+```
+
+#### Resta
+```{python}
+#| code-fold: false
+5+2
+```
+
+#### Multiplicación
+```{python}
+#| code-fold: false
+5*2
+```
+
+#### División
+```{python}
+#| code-fold: false
+5/2
+```
+
+### Idioma de programación
+
+Al ser python un idioma de programación esta dotado de una semántica de variables y estructuras de control. Las variables pueden ser:
+
+|Tipo (inglés)|Ejemplo|
+|---|:----:|
+|entero (int) | `5` |
+|decimal (float)|`5.5`|
+|complejo (complex)|`5+2J`|
+| Contenedoras de datos | |
+|lista (list)| `[1,2,3]`|
+|dupla (tuple) |`(1,2)`|
+|diccionario (dic)|`{"H":1}`|
+|conjunto (set)|`{1, 2, 3}`|
+
+Usando la función `type( )` uno puede ver de que tipo son las variables. Las distintas variables pueden ser guardadas con algún nombre mediante la asignación. Por ejemplo, guardemos el número complejo `1+1J` con el nombre `var` 
+
+```{python}
+#| code-fold: false
+var = 1+1J
+```
+
+La ventaja de nombrar dicho número complejo como `var` es que podemos operarlo ahora haciendo referencia al nombre
+
+```{python}
+#| code-fold: false
+2*var
+```
+
+Una ventaja de python es que ya se tiene mucho desarrollo por la comunidad, por lo que tareas complicadas pueden ser simples. Los desarrollos se guardan en bibliotecas (`libraries`) y para el caso de tareas científicas es recurrente utilizar las bibliotecas `numpy`, `scipy` y `matplotlib`. Con el fin de cargar la información de esas tres bibliotecas escribimos:
+
+```{python}
+#| code-fold: false
+from pylab import *
+```
+
+La biblioteca tiene un tipo de variable especial llamada `numpy.ndarray` que es muy similar a un vector, tiene componentes y se tienen definidas sus operaciones. La forma de declarar un `numpy.array` es utilizando la función `array`
+
+```{python}
+#| code-fold: false
+array([1,2,3])
+```
+
+
+
+
+
