@@ -159,5 +159,33 @@
     "title": "4  Mathematica",
     "section": "4.5 Matrices y algebra lineal",
     "text": "4.5 Matrices y algebra lineal\nhttps://www.wolfram.com/language/fast-introduction-for-math-students/es/matrices-and-linear-algebra/"
+  },
+  {
+    "objectID": "1_3_eqn1dindtiempo.html",
+    "href": "1_3_eqn1dindtiempo.html",
+    "title": "3  Ecuación de Schrödinger independiente del tiempo",
+    "section": "",
+    "text": "\\[\n\\definecolor{magenta}{RGB}{255,0,144}\n\\newcommand{\\cparentesis}[1]{ {\\color{magenta} #1} }\n\\newcommand{\\iprn}{\\cparentesis{(}}\n\\newcommand{\\fprn}{\\cparentesis{)}}\n\\]\nConsideremos una partícula que se mueve en una dimensión con una energía potencial independiente del tiempo, \\(U=U\\iprn x \\fprn\\). Escribamos la ecuación de Schrödingher dependiente del tiempo en este caso,\n\\[\n-\\frac{\\hbar}{i} \\frac{\\partial }{\\partial t} \\Psi\\iprn x,t \\fprn = -\\frac{\\hbar^2}{2m} \\frac{\\partial^2 }{\\partial x^2} \\Psi\\iprn x,t \\fprn + U \\iprn x \\fprn \\Psi \\iprn x,t \\fprn\n\\]\nProponemos una separación de variables \\(\\Psi\\iprn x,t \\fprn = f\\iprn t\\fprn \\psi \\iprn x \\fprn\\) y sustituimos en cada extremo de la ecuación de Schrödingher\n\\[\n\\begin{align}\n-\\frac{\\hbar}{i} \\frac{\\partial }{\\partial t} \\Psi\\iprn x,t \\fprn &= -\\frac{\\hbar}{i} \\frac{\\partial }{\\partial t} \\bigg[  f\\iprn t\\fprn \\psi \\iprn x \\fprn \\bigg]\\\\\n&=-\\frac{\\hbar}{i} \\psi \\iprn x \\fprn\\frac{\\partial }{\\partial t} \\bigg[  f\\iprn t\\fprn  \\bigg]\\\\\n&=-\\frac{\\hbar}{i} \\psi \\iprn x \\fprn\\frac{d f\\iprn t\\fprn}{d t} \\\\\n&=-\\frac{\\hbar}{i} \\psi \\iprn x \\fprn f'\\iprn t\\fprn \\\\\n\\end{align}\n\\]\n\\[\n\\begin{align}\n-\\frac{\\hbar^2}{2m} \\frac{\\partial^2 }{\\partial x^2} \\Psi\\iprn x,t \\fprn &= -\\frac{\\hbar^2}{2m} \\frac{\\partial^2 }{\\partial x^2} \\bigg[ f\\iprn t\\fprn \\psi \\iprn x \\fprn \\bigg]\\\\\n&=- \\frac{\\hbar^2}{2m} f\\iprn t\\fprn \\frac{\\partial^2 }{\\partial x^2} \\bigg[  \\psi \\iprn x \\fprn \\bigg]\\\\\n&=-\\frac{\\hbar^2}{2m} f\\iprn t\\fprn \\frac{d^2 \\psi \\iprn x \\fprn  }{d x^2} \\\\\n&=-\\frac{\\hbar^2}{2m} f\\iprn t\\fprn \\psi''\\iprn x \\fprn\n\\end{align}\n\\]\nPor lo que, ahora, la ecuación de Schrödingher se escribe de la forma\n\\[\n\\begin{align}\n-\\frac{\\hbar}{i} \\psi \\iprn x \\fprn f'\\iprn t\\fprn = -\\frac{\\hbar^2}{2m} f\\iprn t\\fprn \\psi''\\iprn x \\fprn + U \\iprn x \\fprn f\\iprn t\\fprn \\psi \\iprn x \\fprn\n\\end{align}\n\\]\nDividimos ambos lados por \\(f\\iprn t\\fprn \\psi \\iprn x \\fprn\\),\n\\[\n\\begin{align}\n\\frac{\\displaystyle -\\frac{\\hbar}{i} \\psi \\iprn x \\fprn f'\\iprn t\\fprn}{ f\\iprn t\\fprn \\psi \\iprn x \\fp"
+  },
+  {
+    "objectID": "1_3_eqn1dindtiempo.html#ecuación-del-tiempo",
+    "href": "1_3_eqn1dindtiempo.html#ecuación-del-tiempo",
+    "title": "3  Ecuación de Schrödinger independiente del tiempo",
+    "section": "3.1 Ecuación del tiempo",
+    "text": "3.1 Ecuación del tiempo\nResolvamos,\n\\[\n-\\frac{\\hbar}{i} \\frac{ f'\\iprn t\\fprn }{ f\\iprn t\\fprn} = E\n\\]\nIntegramos ambos lados respecto del tiempo,\n\\[\n\\int \\bigg( -\\frac{\\hbar}{i} \\frac{ f'\\iprn t\\fprn }{ f\\iprn t\\fprn} \\bigg)dt = \\int E dt\n\\]\nCon el fin de realizar la integral realicemos un cambio de variable,\n\\[\nu \\equiv f \\quad \\Rightarrow \\quad du = f' dt\n\\]\nEntonces, \\[\n\\begin{align}\n-\\frac{\\hbar}{i}\\int \\frac{1}{u} du &= \\int E dt\\\\\n\\Rightarrow -\\frac{\\hbar}{i} \\ln u &= E t + {\\rm cte}\n\\end{align}\n\\]\nRegresando el cambio de variable, \\[\n\\begin{align}\n-\\frac{\\hbar}{i} \\ln f\\iprn t \\fprn &= E t + {\\rm cte}\\\\\n\\Rightarrow \\ln f\\iprn t \\fprn &= -\\frac{i}{\\hbar} E t -\\frac{i}{\\hbar}{\\rm cte}\\\\\n\\Rightarrow f\\iprn t \\fprn &= e^{ -\\frac{i}{\\hbar} E t -\\frac{i}{\\hbar}{\\rm cte} } = e^{ -\\frac{i}{\\hbar} E t}e^{-\\frac{i}{\\hbar}{\\rm cte} }\n\\end{align}\n\\]\nDefinimos la constante, \\(A=e^{ -\\frac{i}{\\hbar} E t}e^{-\\frac{i}{\\hbar}{\\rm cte}}\\),\n\\[\n\\Rightarrow f\\iprn t \\fprn = A e^{ -\\frac{iEt}{\\hbar} }\n\\]"
+  },
+  {
+    "objectID": "1_3_eqn1dindtiempo.html#ecuación-de-la-posición",
+    "href": "1_3_eqn1dindtiempo.html#ecuación-de-la-posición",
+    "title": "3  Ecuación de Schrödinger independiente del tiempo",
+    "section": "3.2 Ecuación de la posición",
+    "text": "3.2 Ecuación de la posición\nLa ecuación de la posición se conoce como la ecuación de Schrödinger independiente del tiempo\n\\[\n-\\frac{\\hbar^2}{2m}\\psi''\\iprn x \\fprn  +U\\iprn x\\fprn \\psi\\iprn x \\fprn = E \\psi\\iprn x \\fprn\n\\]\nDicha ecuación la podemos escribir de la siguiente manera, \\[\n\\bigg( -\\frac{\\hbar^2}{2m}\\frac{d^2}{dx^2} +U\\iprn x\\fprn\\bigg) \\psi\\iprn x \\fprn = E \\psi\\iprn x \\fprn\n\\]\ny definimos lo que esta entre paréntesis como \\[\n\\hat{H} \\equiv -\\frac{\\hbar^2}{2m}\\frac{d^2}{dx^2} +U\\iprn x\\fprn\n\\]\nPor lo tanto la ecuación de Schrödinger independiente del tiempo se escribe de forma compacta como, \\[\n\\hat{H} \\psi\\iprn x \\fprn = E \\psi\\iprn x \\fprn\n\\]"
+  },
+  {
+    "objectID": "1_3_eqn1dindtiempo.html#densidad-de-probabilidad",
+    "href": "1_3_eqn1dindtiempo.html#densidad-de-probabilidad",
+    "title": "3  Ecuación de Schrödinger independiente del tiempo",
+    "section": "3.3 Densidad de probabilidad",
+    "text": "3.3 Densidad de probabilidad\n\\[\n|\\Psi \\iprn x,t \\fprn|^2 = \\Psi^* \\iprn x,t \\fprn \\Psi \\iprn x,t \\fprn\n\\]"
   }
 ]

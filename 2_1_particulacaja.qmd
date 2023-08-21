@@ -1,0 +1,2 @@
+# Partícula en una caja unidimensional
+

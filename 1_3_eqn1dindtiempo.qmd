@@ -1,0 +1,155 @@
+# Ecuación de Schrödinger independiente del tiempo
+
+$$
+\definecolor{magenta}{RGB}{255,0,144}
+\newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
+\newcommand{\iprn}{\cparentesis{(}}
+\newcommand{\fprn}{\cparentesis{)}}
+$$
+
+Consideremos una partícula que se mueve en una dimensión con una energía potencial independiente del tiempo, $U=U\iprn x \fprn$. Escribamos la ecuación de Schrödingher dependiente del tiempo en este caso,
+
+$$
+-\frac{\hbar}{i} \frac{\partial }{\partial t} \Psi\iprn x,t \fprn = -\frac{\hbar^2}{2m} \frac{\partial^2 }{\partial x^2} \Psi\iprn x,t \fprn + U \iprn x \fprn \Psi \iprn x,t \fprn 
+$$
+
+Proponemos una separación de variables $\Psi\iprn x,t \fprn = f\iprn t\fprn \psi \iprn x \fprn$ y sustituimos en cada extremo de la ecuación de Schrödingher
+
+$$
+\begin{align}
+-\frac{\hbar}{i} \frac{\partial }{\partial t} \Psi\iprn x,t \fprn &= -\frac{\hbar}{i} \frac{\partial }{\partial t} \bigg[  f\iprn t\fprn \psi \iprn x \fprn \bigg]\\
+&=-\frac{\hbar}{i} \psi \iprn x \fprn\frac{\partial }{\partial t} \bigg[  f\iprn t\fprn  \bigg]\\
+&=-\frac{\hbar}{i} \psi \iprn x \fprn\frac{d f\iprn t\fprn}{d t} \\
+&=-\frac{\hbar}{i} \psi \iprn x \fprn f'\iprn t\fprn \\
+\end{align}
+$$
+
+$$
+\begin{align}
+-\frac{\hbar^2}{2m} \frac{\partial^2 }{\partial x^2} \Psi\iprn x,t \fprn &= -\frac{\hbar^2}{2m} \frac{\partial^2 }{\partial x^2} \bigg[ f\iprn t\fprn \psi \iprn x \fprn \bigg]\\
+&=- \frac{\hbar^2}{2m} f\iprn t\fprn \frac{\partial^2 }{\partial x^2} \bigg[  \psi \iprn x \fprn \bigg]\\
+&=-\frac{\hbar^2}{2m} f\iprn t\fprn \frac{d^2 \psi \iprn x \fprn  }{d x^2} \\
+&=-\frac{\hbar^2}{2m} f\iprn t\fprn \psi''\iprn x \fprn
+\end{align}
+$$
+
+Por lo que, ahora, la ecuación de Schrödingher se escribe de la forma
+
+$$
+\begin{align}
+-\frac{\hbar}{i} \psi \iprn x \fprn f'\iprn t\fprn = -\frac{\hbar^2}{2m} f\iprn t\fprn \psi''\iprn x \fprn + U \iprn x \fprn f\iprn t\fprn \psi \iprn x \fprn
+\end{align}
+$$
+
+Dividimos ambos lados por $f\iprn t\fprn \psi \iprn x \fprn$,
+
+$$
+\begin{align}
+\frac{\displaystyle -\frac{\hbar}{i} \psi \iprn x \fprn f'\iprn t\fprn}{ f\iprn t\fprn \psi \iprn x \fprn } &= \frac{\displaystyle -\frac{\hbar^2}{2m} f\iprn t\fprn \psi''\iprn x \fprn + U \iprn x \fprn f\iprn t\fprn \psi \iprn x \fprn}{f\iprn t\fprn \psi \iprn x \fprn }\\
+\frac{\displaystyle -\frac{\hbar}{i} \cancel{\psi \iprn x \fprn} f'\iprn t\fprn}{ f\iprn t\fprn \cancel{\psi \iprn x \fprn} } &= \frac{\displaystyle -\frac{\hbar^2}{2m} \cancel{f\iprn t\fprn} \psi''\iprn x \fprn}{\cancel{f\iprn t\fprn }\psi \iprn x \fprn } + \frac{U \iprn x \fprn \cancel{f\iprn t\fprn \psi \iprn x \fprn}}{\cancel{f\iprn t\fprn \psi \iprn x \fprn} }\\
+-\frac{\hbar}{i} \frac{ f'\iprn t\fprn }{ f\iprn t\fprn}&= -\frac{\hbar^2}{2m}\frac{\psi''\iprn x \fprn}{\psi\iprn x \fprn} +U\iprn x\fprn 
+\end{align}
+$$
+
+Notamos que en la última ecuación del lado izquierdo tenemos algo que, en principio, depende únicamente de $t$ y del lado derecho tenemos algo que únicamente depende de $x$; es decir, la igualdad se mantiene para todo valor de $t$ y $x$ por lo que ambos lados tienen que ser igual a una constante que llamaremos $E$.
+
+$$
+\begin{align}
+-\frac{\hbar}{i} \frac{ f'\iprn t\fprn }{ f\iprn t\fprn}= -\frac{\hbar^2}{2m}\frac{\psi''\iprn x \fprn}{\psi\iprn x \fprn} +U\iprn x\fprn = E \leftarrow \text{ constante }
+\end{align}
+$$
+
+La propuesta de separación de variables nos ha llevado a dos ecuaciones diferenciales ordinarias,
+
+$$
+\begin{align}
+-\frac{\hbar}{i} \frac{ f'\iprn t\fprn }{ f\iprn t\fprn} &= E \\
+\Rightarrow -\frac{\hbar}{i} f'\iprn t\fprn &= E f\iprn t\fprn
+\end{align}
+$$
+
+y 
+
+$$
+\begin{align}
+-\frac{\hbar^2}{2m}\frac{\psi''\iprn x \fprn}{\psi\iprn x \fprn} +U\iprn x\fprn &= E \\
+\Rightarrow -\frac{\hbar^2}{2m}\psi''\iprn x \fprn  +U\iprn x\fprn \psi\iprn x \fprn &= E \psi\iprn x \fprn
+\end{align}
+$$
+
+Notamos que la ecuación del tiempo es una ecuación diferencial ordinaria de primer orden y que podemos resolver. En contraste, la ecuación de la posición es una ecuación diferencial de segundo orden y cuya solución dependerá de quien sea $U\iprn x\fprn$. 
+
+## Ecuación del tiempo
+
+Resolvamos,
+
+$$
+-\frac{\hbar}{i} \frac{ f'\iprn t\fprn }{ f\iprn t\fprn} = E
+$$
+
+Integramos ambos lados respecto del tiempo,
+
+$$
+\int \bigg( -\frac{\hbar}{i} \frac{ f'\iprn t\fprn }{ f\iprn t\fprn} \bigg)dt = \int E dt
+$$
+
+Con el fin de realizar la integral realicemos un cambio de variable,
+
+$$
+u \equiv f \quad \Rightarrow \quad du = f' dt
+$$
+
+Entonces,
+$$
+\begin{align}
+-\frac{\hbar}{i}\int \frac{1}{u} du &= \int E dt\\
+\Rightarrow -\frac{\hbar}{i} \ln u &= E t + {\rm cte}
+\end{align}
+$$
+
+Regresando el cambio de variable,
+$$
+\begin{align}
+-\frac{\hbar}{i} \ln f\iprn t \fprn &= E t + {\rm cte}\\
+\Rightarrow \ln f\iprn t \fprn &= -\frac{i}{\hbar} E t -\frac{i}{\hbar}{\rm cte}\\
+\Rightarrow f\iprn t \fprn &= e^{ -\frac{i}{\hbar} E t -\frac{i}{\hbar}{\rm cte} } = e^{ -\frac{i}{\hbar} E t}e^{-\frac{i}{\hbar}{\rm cte} }
+\end{align}
+$$
+
+Definimos la constante, $A=e^{ -\frac{i}{\hbar} E t}e^{-\frac{i}{\hbar}{\rm cte}}$,
+
+$$
+\Rightarrow f\iprn t \fprn = A e^{ -\frac{iEt}{\hbar} }
+$$
+
+
+## Ecuación de la posición
+
+La ecuación de la posición se conoce como la ecuación de Schrödinger independiente del tiempo 
+
+$$
+-\frac{\hbar^2}{2m}\psi''\iprn x \fprn  +U\iprn x\fprn \psi\iprn x \fprn = E \psi\iprn x \fprn
+$$
+
+Dicha ecuación la podemos escribir de la siguiente manera,
+$$
+\bigg( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} +U\iprn x\fprn\bigg) \psi\iprn x \fprn = E \psi\iprn x \fprn
+$$
+
+y definimos lo que esta entre paréntesis como
+$$
+\hat{H} \equiv -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} +U\iprn x\fprn
+$$
+
+Por lo tanto la ecuación de Schrödinger independiente del tiempo se escribe de forma compacta como, 
+$$
+\hat{H} \psi\iprn x \fprn = E \psi\iprn x \fprn
+$$
+
+
+
+## Densidad de probabilidad
+
+$$
+|\Psi \iprn x,t \fprn|^2 = \Psi^* \iprn x,t \fprn \Psi \iprn x,t \fprn
+$$

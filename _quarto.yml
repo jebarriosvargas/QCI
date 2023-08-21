@@ -12,9 +12,11 @@ book:
       chapters: 
         - 1_1_postulados.qmd
         - 1_2_probabilidad.qmd
+        - 1_3_eqn1dindtiempo.qmd
     - part: "2. Aplicaciones de la mecánica cuántica a sistemas sencillos"
       chapters:
-        - 2_1_particulalibre.qmd
+        - 2_1_particulacaja.qmd
+        - 2_2_particulalibre.qmd
     - part: "3. Átomo de hidrógeno"
     - part: "4. Métodos aproximados"
     - part: "5. Dos electrones: Helio"
