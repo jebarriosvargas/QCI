@@ -8,31 +8,33 @@ book:
   date: "8/10/2023"
   chapters:
     - index.qmd
-    - part: "1. Fundamentos de la mecánica cuántica"
+    - part: "U1. Fundamentos de la mecánica cuántica"
       chapters: 
         - 1_1_postulados.qmd
         - 1_2_probabilidad.qmd
         - 1_3_eqn1dindtiempo.qmd
-    - part: "2. Aplicaciones de la mecánica cuántica a sistemas sencillos"
+        - 1_end_preguntas.qmd
+    - part: "U2. Aplicaciones de la mecánica cuántica a sistemas sencillos"
       chapters:
-        - 2_1_particulacaja.qmd
-        - 2_2_particulalibre.qmd
-    - part: "3. Átomo de hidrógeno"
-    - part: "4. Métodos aproximados"
-    - part: "5. Dos electrones: Helio"
-    - part: "6. Sistemas de muchos electrones"
-    - part: "7. Hartree-Fock"
-    - part: "8. Más allá de HF: la correlación electrónica"
-    - part: "9. Teoría de funcionales de la densidad"
-    - part: "10. Espectroscopía molecular"
+        - 2_1_particulalibre.qmd
+        - 2_2_particulacaja.qmd
+    - part: "U3. Átomo de hidrógeno"
+    - part: "U4. Métodos aproximados"
+    - part: "U5. Dos electrones: Helio"
+    - part: "U6. Sistemas de muchos electrones"
+    - part: "U7. Hartree-Fock"
+    - part: "U8. Más allá de HF: la correlación electrónica"
+    - part: "U9. Teoría de funcionales de la densidad"
+    - part: "U10. Espectroscopía molecular"
+    - references.qmd
+  appendices:
     - part: "Apéndice: Mathematica"
       chapters: 
         - A_1_derivadas.qmd
     - part: "Apéndice: python"
       chapters: 
         - B_1_pycalculadora.qmd
-    - summary.qmd
-    - references.qmd
+    
 
 bibliography: references.bib
 
@@ -41,6 +43,14 @@ format:
     theme: 
       light: flatly
       dark: darkly
+    fontsize: 0.9em
+    linestretch: 1.2
     css: styles.css
+    crossref:
+      eq-prefix: Ecuación     # (default is "Equation")
+    code-fold: true
+    code-summary: "Mostrar código"
+    code-line-numbers: true
+    code-copy: true
   pdf:
     documentclass: scrreprt

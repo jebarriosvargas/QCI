@@ -5,22 +5,23 @@ $$
 \newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
 \newcommand{\iprn}{\cparentesis{(}}
 \newcommand{\fprn}{\cparentesis{)}}
+\newcommand{\ii}{{\rm i}}
 $$
 
 Consideremos una partícula que se mueve en una dimensión con una energía potencial independiente del tiempo, $U=U\iprn x \fprn$. Escribamos la ecuación de Schrödingher dependiente del tiempo en este caso,
 
 $$
--\frac{\hbar}{i} \frac{\partial }{\partial t} \Psi\iprn x,t \fprn = -\frac{\hbar^2}{2m} \frac{\partial^2 }{\partial x^2} \Psi\iprn x,t \fprn + U \iprn x \fprn \Psi \iprn x,t \fprn 
+-\frac{\hbar}{\ii} \frac{\partial }{\partial t} \Psi\iprn x,t \fprn = -\frac{\hbar^2}{2m} \frac{\partial^2 }{\partial x^2} \Psi\iprn x,t \fprn + U \iprn x \fprn \Psi \iprn x,t \fprn 
 $$
 
 Proponemos una separación de variables $\Psi\iprn x,t \fprn = f\iprn t\fprn \psi \iprn x \fprn$ y sustituimos en cada extremo de la ecuación de Schrödingher
 
 $$
 \begin{align}
--\frac{\hbar}{i} \frac{\partial }{\partial t} \Psi\iprn x,t \fprn &= -\frac{\hbar}{i} \frac{\partial }{\partial t} \bigg[  f\iprn t\fprn \psi \iprn x \fprn \bigg]\\
-&=-\frac{\hbar}{i} \psi \iprn x \fprn\frac{\partial }{\partial t} \bigg[  f\iprn t\fprn  \bigg]\\
-&=-\frac{\hbar}{i} \psi \iprn x \fprn\frac{d f\iprn t\fprn}{d t} \\
-&=-\frac{\hbar}{i} \psi \iprn x \fprn f'\iprn t\fprn \\
+-\frac{\hbar}{\ii} \frac{\partial }{\partial t} \Psi\iprn x,t \fprn &= -\frac{\hbar}{i} \frac{\partial }{\partial t} \bigg[  f\iprn t\fprn \psi \iprn x \fprn \bigg]\\
+&=-\frac{\hbar}{\ii} \psi \iprn x \fprn\frac{\partial }{\partial t} \bigg[  f\iprn t\fprn  \bigg]\\
+&=-\frac{\hbar}{\ii} \psi \iprn x \fprn\frac{d f\iprn t\fprn}{d t} \\
+&=-\frac{\hbar}{\ii} \psi \iprn x \fprn f'\iprn t\fprn \\
 \end{align}
 $$
 
@@ -37,7 +38,7 @@ Por lo que, ahora, la ecuación de Schrödingher se escribe de la forma
 
 $$
 \begin{align}
--\frac{\hbar}{i} \psi \iprn x \fprn f'\iprn t\fprn = -\frac{\hbar^2}{2m} f\iprn t\fprn \psi''\iprn x \fprn + U \iprn x \fprn f\iprn t\fprn \psi \iprn x \fprn
+-\frac{\hbar}{\ii} \psi \iprn x \fprn f'\iprn t\fprn = -\frac{\hbar^2}{2m} f\iprn t\fprn \psi''\iprn x \fprn + U \iprn x \fprn f\iprn t\fprn \psi \iprn x \fprn
 \end{align}
 $$
 
@@ -45,9 +46,9 @@ Dividimos ambos lados por $f\iprn t\fprn \psi \iprn x \fprn$,
 
 $$
 \begin{align}
-\frac{\displaystyle -\frac{\hbar}{i} \psi \iprn x \fprn f'\iprn t\fprn}{ f\iprn t\fprn \psi \iprn x \fprn } &= \frac{\displaystyle -\frac{\hbar^2}{2m} f\iprn t\fprn \psi''\iprn x \fprn + U \iprn x \fprn f\iprn t\fprn \psi \iprn x \fprn}{f\iprn t\fprn \psi \iprn x \fprn }\\
-\frac{\displaystyle -\frac{\hbar}{i} \cancel{\psi \iprn x \fprn} f'\iprn t\fprn}{ f\iprn t\fprn \cancel{\psi \iprn x \fprn} } &= \frac{\displaystyle -\frac{\hbar^2}{2m} \cancel{f\iprn t\fprn} \psi''\iprn x \fprn}{\cancel{f\iprn t\fprn }\psi \iprn x \fprn } + \frac{U \iprn x \fprn \cancel{f\iprn t\fprn \psi \iprn x \fprn}}{\cancel{f\iprn t\fprn \psi \iprn x \fprn} }\\
--\frac{\hbar}{i} \frac{ f'\iprn t\fprn }{ f\iprn t\fprn}&= -\frac{\hbar^2}{2m}\frac{\psi''\iprn x \fprn}{\psi\iprn x \fprn} +U\iprn x\fprn 
+\frac{\displaystyle -\frac{\hbar}{\ii} \psi \iprn x \fprn f'\iprn t\fprn}{ f\iprn t\fprn \psi \iprn x \fprn } &= \frac{\displaystyle -\frac{\hbar^2}{2m} f\iprn t\fprn \psi''\iprn x \fprn + U \iprn x \fprn f\iprn t\fprn \psi \iprn x \fprn}{f\iprn t\fprn \psi \iprn x \fprn }\\
+\frac{\displaystyle -\frac{\hbar}{\ii} \cancel{\psi \iprn x \fprn} f'\iprn t\fprn}{ f\iprn t\fprn \cancel{\psi \iprn x \fprn} } &= \frac{\displaystyle -\frac{\hbar^2}{2m} \cancel{f\iprn t\fprn} \psi''\iprn x \fprn}{\cancel{f\iprn t\fprn }\psi \iprn x \fprn } + \frac{U \iprn x \fprn \cancel{f\iprn t\fprn \psi \iprn x \fprn}}{\cancel{f\iprn t\fprn \psi \iprn x \fprn} }\\
+-\frac{\hbar}{\ii} \frac{ f'\iprn t\fprn }{ f\iprn t\fprn}&= -\frac{\hbar^2}{2m}\frac{\psi''\iprn x \fprn}{\psi\iprn x \fprn} +U\iprn x\fprn 
 \end{align}
 $$
 
@@ -123,6 +124,12 @@ $$
 $$
 
 
+## Densidad de probabilidad
+
+$$
+|\Psi \iprn x,t \fprn|^2 = \Psi^* \iprn x,t \fprn \Psi \iprn x,t \fprn
+$$
+
 ## Ecuación de la posición
 
 La ecuación de la posición se conoce como la ecuación de Schrödinger independiente del tiempo 
@@ -134,12 +141,13 @@ $$
 Dicha ecuación la podemos escribir de la siguiente manera,
 $$
 \bigg( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} +U\iprn x\fprn\bigg) \psi\iprn x \fprn = E \psi\iprn x \fprn
-$$
+$$ {#eq-schroedinger-independiente-tiempo}
 
 y definimos lo que esta entre paréntesis como
 $$
 \hat{H} \equiv -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} +U\iprn x\fprn
 $$
+el operador Hamiltoniano de una partícula en una dimensión con una energía potencial independiente del tiempo.
 
 Por lo tanto la ecuación de Schrödinger independiente del tiempo se escribe de forma compacta como, 
 $$
@@ -147,9 +155,3 @@ $$
 $$
 
 
-
-## Densidad de probabilidad
-
-$$
-|\Psi \iprn x,t \fprn|^2 = \Psi^* \iprn x,t \fprn \Psi \iprn x,t \fprn
-$$

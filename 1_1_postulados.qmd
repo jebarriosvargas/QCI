@@ -5,6 +5,7 @@ $$
 \newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
 \newcommand{\iprn}{\cparentesis{(}}
 \newcommand{\fprn}{\cparentesis{)}}
+\newcommand{\ii}{{\rm i}}
 $$
 
 
@@ -22,7 +23,7 @@ El estado de un sistema se describe por la función $\Psi$ de las coordenadas de
 ::: {.callout-note appearance="simple" icon=false collapse="true"}
 ## Postulado 2: Operadores lineales hermitianos
 ::: {.justify}
-Toda propiedad física observable corresponde a un operador lineal Hermitiano. Con el fin de escribir el operador, se escribe la expresión clásica-mecánica de la observable en coordenadas cartesianas y su correspondiente momento lineal, entonces se remplaza cada coordenada $x$ por el operador $\hat{x}$ y cada componente $p_x$ por el operador $-i\hbar\partial/\partial x$.
+Toda propiedad física observable corresponde a un operador lineal Hermitiano. Con el fin de escribir el operador, se escribe la expresión clásica-mecánica de la observable en coordenadas cartesianas y su correspondiente momento lineal, entonces se remplaza cada coordenada $x$ por el operador $\hat{x}$ y cada componente $p_x$ por el operador $-\ii\hbar\partial/\partial x$.
 :::
 :::
 
@@ -60,7 +61,7 @@ donde $\hat{B}g_i=b_ig_i$.
 ::: {.justify}
 La evolución temporal de un estado sin perturbar en un sistema mecánico-cuántico esta dada por la ecuación de Schrödinger dependiente del tiempo,
 \begin{align*}
-    -\frac{\hbar}{i}\frac{\partial \Psi}{\partial t} = \hat{H} \Psi \,,
+    -\frac{\hbar}{\ii}\frac{\partial \Psi}{\partial t} = \hat{H} \Psi \,,
 \end{align*}
 donde $\hat{H}$ es el operador Hamiltoniano (asociado a la energía) del sistema.
 :::
@@ -88,7 +89,7 @@ $$
 La ecuación de Schrödinger nos dice como es la evolución temporal del estado de la partícula. En este caso la ecuación se escribe como,
 
 \begin{align*}
-    -\frac{\hbar}{i}\frac{\partial}{\partial t} \Psi\iprn x,t \fprn= -\frac{\hbar^2}{2m} \frac{\partial}{\partial x} \Psi \iprn x,t \fprn +V\iprn x,t \fprn \Psi \iprn x,t \fprn \,,
+    -\frac{\hbar}{\ii}\frac{\partial}{\partial t} \Psi\iprn x,t \fprn= -\frac{\hbar^2}{2m} \frac{\partial}{\partial x} \Psi \iprn x,t \fprn +V\iprn x,t \fprn \Psi \iprn x,t \fprn \,,
 \end{align*}
 
 

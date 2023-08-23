@@ -1,0 +1,9 @@
+# Preguntas verdadero falso (Capítulo 1 - Levine)
+
+
+True or false? (a) All photons have the same energy. (b) As the frequency of light increases,
+its wavelength decreases. (c) If violet light with l = 400 nm does not cause the photoelectric
+effect in a certain metal, then it is certain that red light with l = 700 nm will not cause the
+photoelectric effect in that metal.
+
+
