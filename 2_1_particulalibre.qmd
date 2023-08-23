@@ -133,31 +133,33 @@ import plotly.graph_objects as go
 
 ω   = E/ħ
 print( f"ω = {ω:.3e} (1/s)" )
+ω /= 1e15
 npts_x = 1000
-npts_t = 6
+npts_t = 100
 # x,t = meshgrid( linspace(-3*2*π/k,3*2*π/k,npts_x),linspace(-1*2*π/ω,1*2*π/ω,npts_t) )
 X   = linspace(-3*2*π/k,3*2*π/k,npts_x)
-T   = linspace(-1*2*π*ω,1*2*π*ω,npts_t)
+T   = linspace(0,4*2*π/ω,npts_t)
 Ψ   = exp(-1J*ω*T[0])*exp(-1J*k*X)
 ReΨ = Ψ.real
 cuadros = []
 for n in range(1,npts_t):
     Ψ   = exp(-1J*ω*T[n])*exp(-1J*k*X)
-    cuadros.append( go.Frame(data=[go.Scatter(x=X, y=Ψ.real)]) )
-print(len(cuadros))
-
+    cuadros.append( go.Frame(data=[go.Scatter(x=X, y=Ψ.real)],layout=go.Layout(title=f"t={T[n]:.2f} (fs)")) )
 
 fig = go.Figure(
     data=[go.Scatter(x=X, y=ReΨ,mode="lines")],
     layout=go.Layout(
         # xaxis=dict(range=[0, 5], autorange=False),
         # yaxis=dict(range=[0, 5], autorange=False),
-        title="Start Title",
-        updatemenus=[dict(
-            type="buttons",
-            buttons=[dict(label="Play",
-                          method="animate",
-                          args=[None])])]
+        title="t=0.00 (fs)",
+        updatemenus=[dict(type="buttons",
+                          x=1.0,y=1.2,
+                          buttons=[dict(label="Play",
+                                        method="animate",
+                                        args=[None,
+                                        dict(frame=dict(duration=100,redraw=True),
+                                        transition=dict(duration=0,easing=None))] )])]
+                          
     ),
     frames = cuadros
 )
