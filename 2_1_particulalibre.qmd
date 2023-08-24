@@ -77,6 +77,8 @@ Es decir, la solución de la partícula libre no es normalizable en el sentido u
 
 ## Visualización de la solución
 
+### Caso $c_1=1$ y $c_2=0$
+
 Considermos el caso de $c_1=1$ y $c_2=0$, por lo que 
 $$
 \psi\iprn x \fprn = e^{ {\rm i}k x }
@@ -119,6 +121,8 @@ ax[1].set_xlabel('x (m)');
 
 ```
 
+
+#### Visualización ${\rm Re}\Psi$
 Recordemos que la función de onda depende del tiempo y definimos $\omega\equiv E/\hbar $
 
 $$
@@ -130,31 +134,42 @@ from pylab import *
 import pandas as pd
 import plotly.graph_objects as go
 
-
+# Masa de un electrón
+m = 9.1093837e-31  # (kg)
+# Constante de planck entre 2π
+ħ = 1.05457182e-34 # (J·s)
+# 10 eV
+E = 10*1.602e-19 # (J)
+k = sqrt( 2*m*E/(ħ*ħ) )
 ω   = E/ħ
+print( "Caso. Un electrón con energía de 10 eV.")
+print( f"k = {k:.3e} (1/m)")
 print( f"ω = {ω:.3e} (1/s)" )
+# Conversióna femptosegundos
 ω /= 1e15
-npts_x = 1000
+npts_x = 2000
 npts_t = 100
 # x,t = meshgrid( linspace(-3*2*π/k,3*2*π/k,npts_x),linspace(-1*2*π/ω,1*2*π/ω,npts_t) )
 X   = linspace(-3*2*π/k,3*2*π/k,npts_x)
 T   = linspace(0,4*2*π/ω,npts_t)
 Ψ   = exp(-1J*ω*T[0])*exp(1J*k*X)
 ReΨ = Ψ.real
+
+
 cuadros = []
 for n in range(1,npts_t):
     Ψ   = exp(-1J*ω*T[n])*exp(1J*k*X)
-    cuadros.append( go.Frame(data=[go.Scatter(x=X, y=Ψ.real)],layout=go.Layout(title=f"t={T[n]:.2f} (fs)")) )
+    cuadros.append( go.Frame(data=[go.Scatter(x=X, y=Ψ.real,mode="lines")],layout=go.Layout(title=f"t={T[n]:.2f} (fs)")) )
 
 fig = go.Figure(
     data=[go.Scatter(x=X, y=ReΨ,mode="lines")],
     layout=go.Layout(
-        # xaxis=dict(range=[0, 5], autorange=False),
-        # yaxis=dict(range=[0, 5], autorange=False),
         title="t=0.00 (fs)",
+        xaxis_title="x (nm)",
+        yaxis_title="Re[Ψ]",
         updatemenus=[dict(type="buttons",
-                          x=1.0,y=1.2,
-                          buttons=[dict(label="Play",
+                          x=1.0,y=1.1,
+                          buttons=[dict(label="Reproducir",
                                         method="animate",
                                         args=[None,
                                         dict(frame=dict(duration=100,redraw=True),
@@ -165,17 +180,201 @@ fig = go.Figure(
 )
 
 fig.show()
+```
+
+#### Visualización ${\rm Im}\Psi$
+
+
+```{python}
+from pylab import *
+import pandas as pd
+import plotly.graph_objects as go
+
+# Masa de un electrón
+m = 9.1093837e-31  # (kg)
+# Constante de planck entre 2π
+ħ = 1.05457182e-34 # (J·s)
+# 10 eV
+E = 10*1.602e-19 # (J)
+k = sqrt( 2*m*E/(ħ*ħ) )
+ω   = E/ħ
+print( "Caso. Un electrón con energía de 10 eV.")
+print( f"k = {k:.3e} (1/m)")
+print( f"ω = {ω:.3e} (1/s)" )
+# Conversióna femptosegundos
+ω /= 1e15
+npts_x = 2000
+npts_t = 100
+# x,t = meshgrid( linspace(-3*2*π/k,3*2*π/k,npts_x),linspace(-1*2*π/ω,1*2*π/ω,npts_t) )
+X   = linspace(-3*2*π/k,3*2*π/k,npts_x)
+T   = linspace(0,4*2*π/ω,npts_t)
+Ψ   = exp(-1J*ω*T[0])*exp(1J*k*X)
+ImΨ = Ψ.imag
+
+
+cuadros = []
+for n in range(1,npts_t):
+    Ψ   = exp(-1J*ω*T[n])*exp(1J*k*X)
+    cuadros.append( go.Frame(data=[go.Scatter(x=X, y=Ψ.imag,mode="lines",line=dict(color='firebrick'))],layout=go.Layout(title=f"t={T[n]:.2f} (fs)")) )
+
+fig = go.Figure(
+    data=[go.Scatter(x=X, y=ImΨ,mode="lines",line=dict(color='firebrick'))],
+    layout=go.Layout(
+        title="t=0.00 (fs)",
+        xaxis_title="x (nm)",
+        yaxis_title="Im[Ψ]",
+        updatemenus=[dict(type="buttons",
+                          x=1.0,y=1.1,
+                          buttons=[dict(label="Reproducir",
+                                        method="animate",
+                                        args=[None,
+                                        dict(frame=dict(duration=100,redraw=True),
+                                        transition=dict(duration=0,easing=None))] )])]
+                          
+    ),
+    frames = cuadros
+)
+
+fig.show()
+```
 
 
 
-# x = x.flatten()
-# t = t.flatten()
-# Ψ = Ψ.flatten()
+#### Visualización flechas
+```{python}
+from pylab import *
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.figure_factory as ff
 
-# d = {'x':x,'t':t,'Repsi':Ψ.real,'Impsi':Ψ.imag}
-# df = pd.DataFrame(data=d)
 
-# px.scatter(df, x="x", y="Repsi", animation_frame="t")
+# Masa de un electrón
+m = 9.1093837e-31  # (kg)
+# Constante de planck entre 2π
+ħ = 1.05457182e-34 # (J·s)
+# 10 eV
+E = 10*1.602e-19 # (J)
+k = sqrt( 2*m*E/(ħ*ħ) )
+ω   = E/ħ
+print( "Caso. Un electrón con energía de 10 eV.")
+print( f"k = {k:.3e} (1/m)")
+print( f"ω = {ω:.3e} (1/s)" )
+ω /= 1e15 # Conversióna femtosegundos
+k /= 1e9  # Conversión a nanometros 
+npts_x = 16
+npts_t = 100
+# x,t = meshgrid( linspace(-3*2*π/k,3*2*π/k,npts_x),linspace(-1*2*π/ω,1*2*π/ω,npts_t) )
+X   = linspace(-3*2*π/k,3*2*π/k,npts_x)
+Y   = zeros_like(X)
+T   = linspace(0,4*2*π/ω,npts_t)
+Ψ   = exp(-1J*ω*T[0])*exp(1J*k*X)
+ReΨ = Ψ.real
+ImΨ = Ψ.imag
 
+
+cuadros = []
+for n in range(1,npts_t):
+    Ψ   = exp(-1J*ω*T[n])*exp(1J*k*X)
+    ReΨ = Ψ.real
+    ImΨ = Ψ.imag
+    fig = ff.create_quiver(X, Y, ReΨ, ImΨ,angle=pi/6)
+    cuadros.append( go.Frame(data=fig.data,layout=go.Layout(title=f"t={T[n]:.2f} (fs)")) )
+
+
+fig0 = ff.create_quiver(X, Y, ReΨ, ImΨ,angle=pi/6)
+fig = go.Figure(
+    data = fig0.data,
+    layout=go.Layout(
+        title="t=0.00 (fs)",
+        xaxis_title="x (nm)",
+        updatemenus=[dict(type="buttons",
+                          x=1.0,y=1.1,
+                          buttons=[dict(label="Reproducir",
+                                        method="animate",
+                                        args=[None,
+                                        dict(frame=dict(duration=100,redraw=True),
+                                        transition=dict(duration=0,easing=None))] )])]
+                          
+    ),
+    frames = cuadros
+)
+fig.update_yaxes(range=[-1,1])
+
+fig.show()
 
 ```
+
+### Caso $c_1=0$ y $c_2=1$
+
+Considermos el caso de $c_1=1$ y $c_2=0$, por lo que 
+$$
+\psi\iprn x \fprn = e^{ -{\rm i}k x }
+$$
+
+
+
+
+
+#### Visualización ${\rm Re}\Psi$ y ${\rm Im}\Psi$
+Recordemos que la función de onda depende del tiempo y definimos $\omega\equiv E/\hbar $
+
+$$
+\Psi \iprn x,t \fprn = e^{-\ii \omega t } e^{ -{\rm i}k x }
+$$
+
+```{python}
+from pylab import *
+import pandas as pd
+import plotly.graph_objects as go
+
+# Masa de un electrón
+m = 9.1093837e-31  # (kg)
+# Constante de planck entre 2π
+ħ = 1.05457182e-34 # (J·s)
+# 10 eV
+E = 10*1.602e-19 # (J)
+k = sqrt( 2*m*E/(ħ*ħ) )
+ω   = E/ħ
+print( "Caso. Un electrón con energía de 10 eV.")
+print( f"k = {k:.3e} (1/m)")
+print( f"ω = {ω:.3e} (1/s)" )
+# Conversióna femptosegundos
+ω /= 1e15
+npts_x = 2000
+npts_t = 100
+# x,t = meshgrid( linspace(-3*2*π/k,3*2*π/k,npts_x),linspace(-1*2*π/ω,1*2*π/ω,npts_t) )
+X   = linspace(-3*2*π/k,3*2*π/k,npts_x)
+T   = linspace(0,4*2*π/ω,npts_t)
+Ψ   = exp(-1J*ω*T[0])*exp(-1J*k*X)
+ReΨ = Ψ.real
+ImΨ = Ψ.imag
+
+
+cuadros = []
+for n in range(1,npts_t):
+    Ψ   = exp(-1J*ω*T[n])*exp(-1J*k*X)
+    cuadros.append( go.Frame(data=[go.Scatter(x=X, y=Ψ.real,mode="lines",name="ReΨ" ),
+                                   go.Scatter(x=X, y=Ψ.imag,mode="lines",line=dict(color='firebrick'),name="ImΨ" )],
+                             layout=go.Layout(title=f"t={T[n]:.2f} (fs)")) )
+
+fig = go.Figure(
+    data=[go.Scatter(x=X, y=ReΨ,mode="lines",name="ReΨ" ),go.Scatter(x=X, y=Ψ.imag,mode="lines",line=dict(color='firebrick'),name="ImΨ" )],
+    layout=go.Layout(
+        title="t=0.00 (fs)",
+        xaxis_title="x (nm)",
+        yaxis_title="Re[Ψ]",
+        updatemenus=[dict(type="buttons",
+                          x=1.0,y=1.1,
+                          buttons=[dict(label="Reproducir",
+                                        method="animate",
+                                        args=[None,
+                                        dict(frame=dict(duration=100,redraw=True),
+                                        transition=dict(duration=0,easing=None))] )])]
+                          
+    ),
+    frames = cuadros
+)
+
+fig.show()
+```
+

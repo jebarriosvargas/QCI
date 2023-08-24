@@ -1,2 +1,106 @@
 # Partícula en una caja unidimensional
 
+
+$$
+\definecolor{magenta}{RGB}{255,0,144}
+\newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
+\newcommand{\iprn}{\cparentesis{(}}
+\newcommand{\fprn}{\cparentesis{)}}
+\newcommand{\ii}{{\rm i}}
+$$
+
+En la mecánica cuántica, confinar una una partícula en una caja es posible si está tiene una energía potencial dada por,
+
+$$
+U\iprn x \fprn =\left\{\begin{array}{c,l,l}
+\infty & \text{ si $x<0$}&\text{Región I}\\
+0 & \text{ si $0<x<\ell$}&\text{Región II}\\
+\infty & \text{ si $x>\ell$}&\text{Región III}
+\end{array}\right.
+$$
+
+```{python}
+#| label: fig-potencialPIB
+#| fig-cap: "Gráfica de la energía potencial" 
+
+from pylab import *
+
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "sans-serif",
+    "font.sans-serif": "Helvetica",
+})
+
+ℓ = 7 # (Å)
+x = linspace( 0-10, ℓ+10,1000 )
+U = zeros_like(x)
+U[x<0] = 100
+U[x>ℓ] = 100
+
+fig,ax = plt.subplots(figsize=(4,4))
+ax.plot(x,U,alpha=0.7,lw=4,c="#009B77")
+ax.fill_between(x,U,0,alpha=0.2,color="#009B77")
+ax.set_axis_off()
+ax.set_ylim((-10.0,99))
+ax.arrow(-10,0,20+ℓ,0 ,length_includes_head=True,head_width=3,head_length=1,color='k' )
+ax.arrow(  0,0,0,98 ,length_includes_head=True,head_width=1,head_length=3,color='k' )
+ax.plot([0,0],[-1,1],lw=2,c='k')
+ax.plot([ℓ,ℓ],[-1,1],lw=2,c='k')
+ax.text(10+ℓ-2,3,r"$x$",fontsize=16)
+ax.text(ℓ,-8,r"$\ell$",fontsize=16,ha="center")
+ax.text(0,-8,r"$0$",fontsize=16,ha="center")
+ax.text(-6,92,r"$U(x)$",fontsize=16);
+
+```
+
+
+Por lo que la ecuación de Schrödinger independiente (@eq-schroedinger-independiente-tiempo) esta dada por,
+
+
+$$
+\begin{align}
+\hat{H} \psi &= E \psi \\
+\bigg( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} +U\iprn x\fprn \bigg) \psi\iprn x \fprn &= E \psi\iprn x \fprn\\
+-\frac{\hbar^2}{2m}\frac{d^2\psi\iprn x \fprn }{dx^2} +U\iprn x\fprn\psi\iprn x \fprn &= E \psi\iprn x \fprn\\
+\Rightarrow \frac{d^2\psi\iprn x \fprn }{dx^2} -\frac{2m}{\hbar^2} U\iprn x\fprn\psi\iprn x \fprn &= -\frac{2m}{\hbar^2} E \psi\iprn x \fprn \\
+\Rightarrow \frac{d^2\psi\iprn x \fprn }{dx^2} +\frac{2m}{\hbar^2} \bigg( E-U\iprn x\fprn\bigg)\psi\iprn x \fprn &= 0
+\end{align}
+$$
+
+
+Dado que la energía potencial está definida por regiones, entonces resolvemos la ecuación por regiones.
+
+## Región I y III
+Tanto en la región I como en la III, la ecuación a resolver sería 
+$$
+\frac{d^2\psi\iprn x \fprn }{dx^2} +\frac{2m}{\hbar^2} \bigg( E- \infty \bigg)\psi\iprn x \fprn = 0
+$$
+
+Dejando de lado el primer término del lado izquierdo de la ecuación analicemos el segundo del lado izquierdo. Buscamos qué $\psi\iprn x \fprn$ tal que 
+$$
+\begin{align}
+\frac{2m}{\hbar^2} \bigg( E- \infty \bigg)\psi\iprn x \fprn &\approx 0\\
+\text{Dado que $(E- \infty)\sim -\infty$ }\\
+\Rightarrow \frac{2m}{\hbar^2} \bigg( - \infty \bigg)\psi\iprn x \fprn &\approx 0\\
+\end{align}
+$$
+Por lo que esperariamos que $\psi\approx 0$ para que se cumpla la ecuación. 
+
+Es posible mostrar que $\psi_{\rm I}\iprn x \fprn=0=\psi_{\rm III}\iprn x \fprn$.
+
+## Región II
+
+$$
+\frac{d^2\psi\iprn x \fprn_{\rm II} }{dx^2} +\frac{2m}{\hbar^2} E\psi\iprn x \fprn_{\rm II} = 0
+$$
+
+La solución general de la ecuación es,
+
+$$
+\psi_{\rm II}\iprn x \fprn = c_1 e^{ {\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }+ c_2 e^{ -{\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }
+$$
+
+Definamos la variable $\theta\equiv \sqrt{2mE/\hbar^2}x$
+
+
+
