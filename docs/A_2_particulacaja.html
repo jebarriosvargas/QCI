@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="JEBV">
-<meta name="dcterms.date" content="2023-08-10">
 
-<title>Química Cuántica I</title>
+<title>Química Cuántica I - Appendix B — Ejemplo. Partícula en una caja</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1_1_postulados.html" rel="next">
+<link href="./B_1_pycalculadora.html" rel="next">
+<link href="./A_1_derivadas.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Appendices</li><li class="breadcrumb-item"><a href="./A_1_derivadas.html">Apéndice: Mathematica</a></li><li class="breadcrumb-item"><a href="./A_2_particulacaja.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Ejemplo. Partícula en una caja</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -110,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -233,13 +232,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
  <span class="menu-text">Apéndice: Mathematica</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./A_1_derivadas.html" class="sidebar-item-text sidebar-link">
@@ -248,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./A_2_particulacaja.html" class="sidebar-item-text sidebar-link">
+  <a href="./A_2_particulacaja.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Ejemplo. Partícula en una caja</span></span></a>
   </div>
 </li>
@@ -269,12 +268,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./B_3_particula1D.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Una partícula en una dimensión en un potencial <span class="math inline">\(U(x)\)</span></span></span></a>
-  </div>
-</li>
       </ul>
   </li>
       </ul>
@@ -289,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#ortonormalidad" id="toc-ortonormalidad" class="nav-link active" data-scroll-target="#ortonormalidad"><span class="header-section-number">B.1</span> Ortonormalidad</a></li>
   </ul>
 </nav>
     </div>
@@ -298,26 +291,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Química Cuántica I</h1>
+<h1 class="title">Appendix B — Ejemplo. Partícula en una caja</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>JEBV </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 10, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -325,9 +306,40 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>Notas generadas utilizando Quarto. Para conocer más sobre Quarto visite <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
+<p><span class="math display">\[
+\definecolor{magenta}{RGB}{255,0,144}
+\definecolor{verde}{RGB}{60,179,113}
+\newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
+\newcommand{\iprn}{\cparentesis{(}}
+\newcommand{\fprn}{\cparentesis{)}}
+\newcommand{\ii}{{\rm i}}
+\newcommand{\nn}{ {\color{verde} n} }
+\newcommand{\mm}{ {\color{magenta} m} }
+\]</span></p>
+<p>Obtuvimos</p>
+<p><span class="math display">\[
+E_\nn = \frac{h^2}{8m\ell^2} \nn^2; \quad \psi_\nn(x)=\sqrt{\frac{2}{\ell}} \sin (k_\nn x)
+\]</span> donde</p>
+<p><span class="math display">\[
+k_\nn = \sqrt{\frac{2mE_\nn}{\hbar^2}} = \frac{\pi}{\ell} \nn
+\]</span></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/Mathematica_PartCaja_1.png" class="img-fluid figure-img" width="600"></p>
+<figcaption class="figure-caption">Ventana de un cuaderno de trabajo de Mathemathica.</figcaption>
+</figure>
+</div>
+<section id="ortonormalidad" class="level2" data-number="B.1">
+<h2 data-number="B.1" class="anchored" data-anchor-id="ortonormalidad"><span class="header-section-number">B.1</span> Ortonormalidad</h2>
+<p>Mostremos que <span class="math display">\[
+\int_{0}^{\ell} \psi^*_\nn \psi_\mm dx = \delta_{\nn \mm}
+\]</span></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/Mathematica_PartCaja_2.png" class="img-fluid figure-img" width="600"></p>
+<figcaption class="figure-caption">Ventana de un cuaderno de trabajo de Mathemathica.</figcaption>
+</figure>
+</div>
 
 
 </section>
@@ -683,10 +695,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./A_1_derivadas.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Mathematica</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1_1_postulados.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de la mecánica cuántica</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./B_1_pycalculadora.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Python</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

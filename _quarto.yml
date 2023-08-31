@@ -33,9 +33,11 @@ book:
     - part: "Apéndice: Mathematica"
       chapters: 
         - A_1_derivadas.qmd
+        - A_2_particulacaja.qmd
     - part: "Apéndice: python"
       chapters: 
         - B_1_pycalculadora.qmd
+        - B_3_particula1D.qmd
     
 
 bibliography: references.bib
