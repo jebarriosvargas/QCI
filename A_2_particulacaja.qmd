@@ -1,0 +1,36 @@
+# Ejemplo. Partícula en una caja
+
+$$
+\definecolor{magenta}{RGB}{255,0,144}
+\definecolor{verde}{RGB}{60,179,113}
+\newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
+\newcommand{\iprn}{\cparentesis{(}}
+\newcommand{\fprn}{\cparentesis{)}}
+\newcommand{\ii}{{\rm i}}
+\newcommand{\nn}{ {\color{verde} n} }
+\newcommand{\mm}{ {\color{magenta} m} }
+$$
+
+Obtuvimos
+
+$$
+E_\nn = \frac{h^2}{8m\ell^2} \nn^2; \quad \psi_\nn(x)=\sqrt{\frac{2}{\ell}} \sin (k_\nn x)
+$$
+donde
+
+$$
+k_\nn = \sqrt{\frac{2mE_\nn}{\hbar^2}} = \frac{\pi}{\ell} \nn
+$$
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/Mathematica_PartCaja_1.png){fig-align="left" width=600}
+
+## Ortonormalidad
+
+Mostremos que 
+$$
+\int_{0}^{\ell} \psi^*_\nn \psi_\mm dx = \delta_{\nn \mm}
+$$
+
+![Ventana de un cuaderno de trabajo de Mathemathica.](img/Mathematica_PartCaja_2.png){fig-align="left" width=600}
+
+
