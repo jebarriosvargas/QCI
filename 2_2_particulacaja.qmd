@@ -100,7 +100,25 @@ $$
 \psi_{\rm II}\iprn x \fprn = c_1 e^{ {\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }+ c_2 e^{ -{\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }
 $$
 
-Definamos la variable $\theta\equiv \sqrt{2mE/\hbar^2}x$
+Definamos la variable $\theta\equiv \sqrt{2mE/\hbar^2}x$, por lo que podemos escribir de forma compacta,
 
+$$
+\begin{align}
+\psi_{\rm II}\iprn x \fprn &= c_1 e^{ {\rm i}\theta }+ c_2 e^{ -{\rm i}\theta }\\
+&= c_1\cos\theta+\ii c_1\sin\theta + c_2\cos\theta -\ii \sin \theta\\
+&= \bigg( c_1+c_2 \bigg)\cos\theta + \ii\bigg( c_1-c_2 \bigg)\sin\theta
+\end{align}
+$$
+
+Podemos definir, $A\equiv = c_1+c_2$ y $B=\ii(c_1-c_2)$ y reescribir la ecuación previa
+$$
+\psi_{\rm II}\iprn x \fprn = A \cos \theta +B \sin\theta
+$$
+
+Regresando a la variable previa,
+
+$$
+\psi_{\rm II}\iprn x \fprn = A \cos \bigg( \sqrt{\frac{2mE}{\hbar} }x \bigg)\theta +B \sin \bigg( \sqrt{\frac{2mE}{\hbar} }x \bigg)
+$$
 
 

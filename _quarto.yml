@@ -18,6 +18,8 @@ book:
       chapters:
         - 2_1_particulalibre.qmd
         - 2_2_particulacaja.qmd
+        - 2_3_particularectangular.qmd
+        - 2_4_particulabarrera.qmd
     - part: "U3. Átomo de hidrógeno"
     - part: "U4. Métodos aproximados"
     - part: "U5. Dos electrones: Helio"

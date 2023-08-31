@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Química Cuántica I - 6&nbsp; Partícula en una caja unidimensional</title>
+<title>Química Cuántica I - 7&nbsp; Partícula en un potencial rectangular</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2_3_particularectangular.html" rel="next">
-<link href="./2_1_particulalibre.html" rel="prev">
+<link href="./2_4_particulabarrera.html" rel="next">
+<link href="./2_2_particulacaja.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_1_particulalibre.html">U2. Aplicaciones de la mecánica cuántica a sistemas sencillos</a></li><li class="breadcrumb-item"><a href="./2_2_particulacaja.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Partícula en una caja unidimensional</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_1_particulalibre.html">U2. Aplicaciones de la mecánica cuántica a sistemas sencillos</a></li><li class="breadcrumb-item"><a href="./2_3_particularectangular.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Partícula en un potencial rectangular</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -199,13 +199,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_2_particulacaja.html" class="sidebar-item-text sidebar-link active">
+  <a href="./2_2_particulacaja.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Partícula en una caja unidimensional</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_3_particularectangular.html" class="sidebar-item-text sidebar-link">
+  <a href="./2_3_particularectangular.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Partícula en un potencial rectangular</span></span></a>
   </div>
 </li>
@@ -306,21 +306,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#región-i-y-iii" id="toc-región-i-y-iii" class="nav-link active" data-scroll-target="#región-i-y-iii"><span class="header-section-number">6.1</span> Región I y III</a></li>
-  <li><a href="#región-ii" id="toc-región-ii" class="nav-link" data-scroll-target="#región-ii"><span class="header-section-number">6.2</span> Región II</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Partícula en una caja unidimensional</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Partícula en un potencial rectangular</span></h1>
 </div>
 
 
@@ -342,14 +335,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 \newcommand{\fprn}{\cparentesis{)}}
 \newcommand{\ii}{{\rm i}}
 \]</span></p>
-<p>En la mecánica cuántica, confinar una una partícula en una caja es posible si está tiene una energía potencial dada por,</p>
-<p><span class="math display">\[
-U\iprn x \fprn =\left\{\begin{array}{c,l,l}
-\infty &amp; \text{ si $x&lt;0$}&amp;\text{Región I}\\
-0 &amp; \text{ si $0&lt;x&lt;\ell$}&amp;\text{Región II}\\
-\infty &amp; \text{ si $x&gt;\ell$}&amp;\text{Región III}
-\end{array}\right.
-\]</span></p>
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
@@ -364,8 +349,8 @@ U\iprn x \fprn =\left\{\begin{array}{c,l,l}
 <span id="cb1-9"><a href="#cb1-9"></a>ℓ <span class="op">=</span> <span class="dv">7</span> <span class="co"># (Å)</span></span>
 <span id="cb1-10"><a href="#cb1-10"></a>x <span class="op">=</span> linspace( <span class="dv">0</span><span class="op">-</span><span class="dv">10</span>, ℓ<span class="op">+</span><span class="dv">10</span>,<span class="dv">1000</span> )</span>
 <span id="cb1-11"><a href="#cb1-11"></a>U <span class="op">=</span> zeros_like(x)</span>
-<span id="cb1-12"><a href="#cb1-12"></a>U[x<span class="op">&lt;</span><span class="dv">0</span>] <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a>U[x<span class="op">&gt;</span>ℓ] <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>U[x<span class="op">&lt;</span><span class="dv">0</span>] <span class="op">=</span> <span class="dv">60</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>U[x<span class="op">&gt;</span>ℓ] <span class="op">=</span> <span class="dv">60</span></span>
 <span id="cb1-14"><a href="#cb1-14"></a></span>
 <span id="cb1-15"><a href="#cb1-15"></a>fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
 <span id="cb1-16"><a href="#cb1-16"></a>ax.plot(x,U,alpha<span class="op">=</span><span class="fl">0.7</span>,lw<span class="op">=</span><span class="dv">4</span>,c<span class="op">=</span><span class="st">"#009B77"</span>)</span>
@@ -384,64 +369,14 @@ U\iprn x \fprn =\left\{\begin{array}{c,l,l}
 <div class="cell-output cell-output-display">
 <div id="fig-potencialpib" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="2_2_particulacaja_files/figure-html/fig-potencialpib-output-1.png" width="317" height="315" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.1: Gráfica de la energía potencial</figcaption>
+<p><img src="2_3_particularectangular_files/figure-html/fig-potencialpib-output-1.png" width="317" height="315" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.1: Gráfica de la energía potencial</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Por lo que la ecuación de Schrödinger independiente (<a href="1_3_eqn1dindtiempo.html#eq-schroedinger-independiente-tiempo">Ecuación&nbsp;<span>3.1</span></a>) esta dada por,</p>
-<p><span class="math display">\[
-\begin{align}
-\hat{H} \psi &amp;= E \psi \\
-\bigg( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2} +U\iprn x\fprn \bigg) \psi\iprn x \fprn &amp;= E \psi\iprn x \fprn\\
--\frac{\hbar^2}{2m}\frac{d^2\psi\iprn x \fprn }{dx^2} +U\iprn x\fprn\psi\iprn x \fprn &amp;= E \psi\iprn x \fprn\\
-\Rightarrow \frac{d^2\psi\iprn x \fprn }{dx^2} -\frac{2m}{\hbar^2} U\iprn x\fprn\psi\iprn x \fprn &amp;= -\frac{2m}{\hbar^2} E \psi\iprn x \fprn \\
-\Rightarrow \frac{d^2\psi\iprn x \fprn }{dx^2} +\frac{2m}{\hbar^2} \bigg( E-U\iprn x\fprn\bigg)\psi\iprn x \fprn &amp;= 0
-\end{align}
-\]</span></p>
-<p>Dado que la energía potencial está definida por regiones, entonces resolvemos la ecuación por regiones.</p>
-<section id="región-i-y-iii" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="región-i-y-iii"><span class="header-section-number">6.1</span> Región I y III</h2>
-<p>Tanto en la región I como en la III, la ecuación a resolver sería <span class="math display">\[
-\frac{d^2\psi\iprn x \fprn }{dx^2} +\frac{2m}{\hbar^2} \bigg( E- \infty \bigg)\psi\iprn x \fprn = 0
-\]</span></p>
-<p>Dejando de lado el primer término del lado izquierdo de la ecuación analicemos el segundo del lado izquierdo. Buscamos qué <span class="math inline">\(\psi\iprn x \fprn\)</span> tal que <span class="math display">\[
-\begin{align}
-\frac{2m}{\hbar^2} \bigg( E- \infty \bigg)\psi\iprn x \fprn &amp;\approx 0\\
-\text{Dado que $(E- \infty)\sim -\infty$ }\\
-\Rightarrow \frac{2m}{\hbar^2} \bigg( - \infty \bigg)\psi\iprn x \fprn &amp;\approx 0\\
-\end{align}
-\]</span> Por lo que esperariamos que <span class="math inline">\(\psi\approx 0\)</span> para que se cumpla la ecuación.</p>
-<p>Es posible mostrar que <span class="math inline">\(\psi_{\rm I}\iprn x \fprn=0=\psi_{\rm III}\iprn x \fprn\)</span>.</p>
-</section>
-<section id="región-ii" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="región-ii"><span class="header-section-number">6.2</span> Región II</h2>
-<p><span class="math display">\[
-\frac{d^2\psi\iprn x \fprn_{\rm II} }{dx^2} +\frac{2m}{\hbar^2} E\psi\iprn x \fprn_{\rm II} = 0
-\]</span></p>
-<p>La solución general de la ecuación es,</p>
-<p><span class="math display">\[
-\psi_{\rm II}\iprn x \fprn = c_1 e^{ {\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }+ c_2 e^{ -{\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }
-\]</span></p>
-<p>Definamos la variable <span class="math inline">\(\theta\equiv \sqrt{2mE/\hbar^2}x\)</span>, por lo que podemos escribir de forma compacta,</p>
-<p><span class="math display">\[
-\begin{align}
-\psi_{\rm II}\iprn x \fprn &amp;= c_1 e^{ {\rm i}\theta }+ c_2 e^{ -{\rm i}\theta }\\
-&amp;= c_1\cos\theta+\ii c_1\sin\theta + c_2\cos\theta -\ii \sin \theta\\
-&amp;= \bigg( c_1+c_2 \bigg)\cos\theta + \ii\bigg( c_1-c_2 \bigg)\sin\theta
-\end{align}
-\]</span></p>
-<p>Podemos definir, <span class="math inline">\(A\equiv = c_1+c_2\)</span> y <span class="math inline">\(B=\ii(c_1-c_2)\)</span> y reescribir la ecuación previa <span class="math display">\[
-\psi_{\rm II}\iprn x \fprn = A \cos \theta +B \sin\theta
-\]</span></p>
-<p>Regresando a la variable previa,</p>
-<p><span class="math display">\[
-\psi_{\rm II}\iprn x \fprn = A \cos \bigg( \sqrt{\frac{2mE}{\hbar} }x \bigg)\theta +B \sin \bigg( \sqrt{\frac{2mE}{\hbar} }x \bigg)
-\]</span></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -794,13 +729,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./2_1_particulalibre.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Partícula libre en una dimensión</span></span>
+      <a href="./2_2_particulacaja.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Partícula en una caja unidimensional</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2_3_particularectangular.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Partícula en un potencial rectangular</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2_4_particulabarrera.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Partícula a través de una barrera de potencial</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
