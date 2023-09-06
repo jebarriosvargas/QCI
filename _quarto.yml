@@ -20,6 +20,7 @@ book:
         - 2_2_particulacaja.qmd
         - 2_3_particularectangular.qmd
         - 2_4_particulabarrera.qmd
+        - 2_5_particulaatravezbarrera.qmd
     - part: "U3. Átomo de hidrógeno"
     - part: "U4. Métodos aproximados"
     - part: "U5. Dos electrones: Helio"

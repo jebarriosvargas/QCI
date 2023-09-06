@@ -1,0 +1,53 @@
+# Partícula a travesando una barrera de energía potencial
+
+Consideremos un partícula con energía potencial
+
+$$
+U(x) = \left\{ \begin{array}{ll}
+0 & x<0 \\
+U_0   & 0<x<\ell \\
+0 & \ell<x 
+\end{array}
+\right.
+$$
+
+
+```{python}
+#| label: fig-potencialatravezPIB
+#| fig-cap: "Gráfica de la energía potencial"
+#| echo: false
+
+from pylab import *
+
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "sans-serif",
+    "font.sans-serif": "Helvetica",
+})
+
+ℓ = 7 # (Å)
+x = linspace( 0-10, ℓ+10,1000 )
+U = zeros_like(x)
+U[logical_and(x>0,x<ℓ)] = 60
+# U[] = 100
+
+fig,ax = plt.subplots(figsize=(4,4))
+ax.plot(x,U,alpha=0.7,lw=4,c="#009B77")
+ax.fill_between(x,U,0,alpha=0.2,color="#009B77")
+ax.set_axis_off()
+ax.set_ylim((-10.0,99))
+ax.arrow(-10,0,20+ℓ,0 ,length_includes_head=True,head_width=3,head_length=1,color='k' )
+ax.arrow(  0,0,0,98 ,length_includes_head=True,head_width=1,head_length=3,color='k' )
+ax.plot([0,0],[-1,1],lw=2,c='k')
+ax.plot([ℓ,ℓ],[-1,1],lw=2,c='k')
+ax.text(10+ℓ-2,3,r"$x$",fontsize=16)
+ax.text(ℓ,-8,r"$\ell$",fontsize=16,ha="center")
+ax.text(0,-8,r"$0$",fontsize=16,ha="center")
+ax.text(-6,92,r"$U(x)$",fontsize=16);
+
+```
+
+$$
+\psi_{\rm Barrera} \sim e^{-k_{\rm II}x} \Rightarrow T \sim |\psi_{\rm Barrera}|^2\sim e^{-2 k_{\rm II}\ell } 
+$$
+

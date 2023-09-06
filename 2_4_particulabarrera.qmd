@@ -1,4 +1,4 @@
-# Partícula a través de una barrera de potencial
+# Partícula con una barrera de energía potencial
 
 $$
 \definecolor{magenta}{RGB}{255,0,144}
@@ -8,9 +8,23 @@ $$
 \newcommand{\ii}{{\rm i}}
 $$
 
+Consideremos un partícula con energía potencial
+
+
+$$
+U(x) = \left\{ \begin{array}{ll}
+0 & x<0 \\
+U_0   & 0<x<\ell \\
+0 & \ell<x 
+\end{array}
+\right.
+$$
+
+
 ```{python}
 #| label: fig-potencialPIB
 #| fig-cap: "Gráfica de la energía potencial" 
+#| echo: false
 
 from pylab import *
 
@@ -39,5 +53,77 @@ ax.text(10+ℓ-2,3,r"$x$",fontsize=16)
 ax.text(ℓ,-8,r"$\ell$",fontsize=16,ha="center")
 ax.text(0,-8,r"$0$",fontsize=16,ha="center")
 ax.text(-6,92,r"$U(x)$",fontsize=16);
+
+```
+
+
+```{python}
+#| label: fig-EstadosBarrera
+#| fig-cap: "Gráfica de barrera de potencial" 
+
+from pylab import *
+
+
+# -- Resolución numérica --
+#
+# Necesitamos los valores de las constantes
+# ħ²/2me (en unidades "adecuadas")
+#
+ħ          = 0.6582119514           # [eV fs]
+e          = 1.602e-19              # 1 eV = 1.602e-19 J
+c          = 299792458              # [m/s]
+massfactor = e/c/c                  # 1 eV/c^2 = 1.79e-36 kg
+me         = 9.109e-31/massfactor   # [eV/c^2] = 0.5x10^6 eV/c^2
+c_nmfs     = 299.792458             # [nm/fs]
+ħ2_2me     = ħ*ħ*c_nmfs*c_nmfs/2/me # eV nm^2
+
+N    = 2**13+1  # Número de puntos a considerar
+xinf = 100.0    # nm
+ℓ    = 2.0      # nm
+
+x    = linspace(-xinf,xinf,N) # Puntos donde obtendremos las funciones
+Δx   = x[1]-x[0]              # Δx es el mismo para todas las funciones
+
+U0   = 1.0  # eV
+
+U        = zeros(N)
+index    = logical_and(x>-ℓ, x<ℓ)
+U[index] = U0
+
+Mdd      = 1./(Δx*Δx)*( diag(ones(N-1),-1) -2*diag(ones(N),0) + diag(ones(N-1),1))
+H        = -ħ2_2me*Mdd + diag(U)
+E,ψT     = eigh(H)
+ψ        = transpose(ψT)
+
+# -- Graficación --
+
+import seaborn as sns
+# Definimos el entorno de graficación
+fig,axes = plt.subplots(ncols=1,nrows=1,figsize=(5,5))
+# fig: objeto que contiene el marco donde se encontrará la gráfica
+# axes: objeto que contiene los ejes donde se graficará
+axes.set_title("Un electrón con "+r"$U_0={0:.1f}$ eV, $\ell={1:.1f}$ nm".format(U0,ℓ))
+axes.set_xlim(-6*ℓ,6*ℓ)
+
+axes.plot(x,U,c="#008b8b",label="U(x)")
+
+
+index = E<U0
+itera = [i for i, x in enumerate(index) if x]
+itera = [ 100,200,300,400 ]
+
+num_shades = len(itera)+1
+color_list = sns.cubehelix_palette(num_shades)
+
+for i in itera:
+    axes.plot(x,E[i]+4*ψ[i],label=r"$E$={1:>8.1f} eV".format(i+1,E[i]),c=color_list[i//100])
+
+for i in itera:
+    axes.plot([-ℓ,ℓ],[E[i],E[i]],'-',c=color_list[i//100],lw=0.5)
+
+axes.set_xlabel("$x$ [nm]",fontsize=16)
+axes.set_ylabel("$E$ [eV]",fontsize=16)
+axes.legend(loc=3)
+plt.show()
 
 ```
