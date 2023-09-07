@@ -1,4 +1,13 @@
-# Partícula a travesando una barrera de energía potencial
+# Partícula atravesando una barrera de energía potencial
+
+$$
+\definecolor{magenta}{RGB}{255,0,144}
+\newcommand{\cparentesis}[1]{ {\color{magenta} #1} }
+\newcommand{\iprn}{\cparentesis{(}}
+\newcommand{\fprn}{\cparentesis{)}}
+\newcommand{\ii}{{\rm i}}
+$$
+
 
 Consideremos un partícula con energía potencial
 
@@ -47,7 +56,204 @@ ax.text(-6,92,r"$U(x)$",fontsize=16);
 
 ```
 
+## Caso $E<U_0$
+
+::: {.callout-note appearance="simple" icon=false collapse="false"}
+## Solución
+
+Las soluciones por regiones son:
+
+| Región ${\rm I}$|Región ${\rm II}$|Región ${\rm III}$|
+| :---: |:---:|:---:|
+|$\psi_{\rm I} \iprn x \fprn = A e^{\ii k_{\rm I} x } + B e^{-\ii k_{\rm I} x }$|$\psi_{\rm II} \iprn x \fprn = C e^{k_{\rm II} x } + D e^{-k_{\rm II} x }$|$\psi_{\rm III} \iprn x \fprn = F e^{\ii k_{\rm I} x } + G e^{-\ii k_{\rm I} x }$|
+|$\displaystyle k_{\rm I} = \sqrt{\frac{2mE}{\hbar^2}}$ | $\displaystyle k_{\rm II} = \sqrt{\frac{2mE}{\hbar^2}}$ | $\displaystyle k_{\rm III}=k_{\rm I}= \sqrt{\frac{2mE}{\hbar^2}}$|
+
+Restringimos nuestro interés al estado estacionario propagándose a la derecha de la región ${\rm III}$, entonces $G=0$. Por lo que nuestras incógnitas son, $A$, $B$, $C$, $D$, $F$ y $E$. 
+
+Establecemos las condiciones de continuidad
+
+|   |   |
+|:---:|:---:|
+|$$\psi_{\rm I}(x=0)=\psi_{\rm II}(x=0)$${#eq-barrera-uno}|$$\psi_{\rm II}(x=\ell)=\psi_{\rm III}(x=\ell)$${#eq-barrera-tres}|
+|$$\displaystyle \frac{d}{dx}\psi_{\rm I}\bigg|_{x=0}=\frac{d}{dx}\psi_{\rm II}\bigg|_{x=0}$${#eq-barrera-dos}|$$\displaystyle \frac{d}{dx}\psi_{\rm II}\bigg|_{x=\ell}=\frac{d}{dx}\psi_{\rm III}\bigg|_{x=\ell}$${#eq-barrera-cuatro}|
+
+
+De @eq-barrera-uno,
+$$
+\begin{align}
+\psi_{\rm I} \iprn x=0 \fprn = A e^{\ii k_{\rm I} 0 } + B e^{-\ii k_{\rm I} 0 } &= \psi_{\rm II} \iprn x=0 \fprn = C e^{k_{\rm II} 0 } + D e^{-k_{\rm II} 0 }\\
+A+B&=C+D
+\end{align}
+$${#eq-barrera-uno-siguiente}
+
+De @eq-barrera-dos,
+$$
+\begin{align}
+\ii k_{\rm I} A -\ii k_{\rm I} B &= -k_{\rm II} C+k_{\rm II} D\\
+\ii k_{\rm I}(A-B) &= -k_{\rm II} (C-D)
+\end{align}
+$${#eq-barrera-dos-siguiente}
+
+De @eq-barrera-tres,
+$$
+Ce^{-k_{\rm II}\ell}+De^{k_{\rm II}\ell} = F e^{\ii k_{\rm I}\ell}
+$${#eq-barrera-tres-siguiente}
+
+De @eq-barrera-cuatro,
+$$
+-k_{\rm II}Ce^{-k_{\rm II}\ell} +k_{\rm II} D e^{k_{\rm II}\ell} = \ii k_{\rm I} F e^{\ii k_{\rm I}\ell}
+$${#eq-barrera-cuatro-siguiente}
+
+Despejamos $C$ de @eq-barrera-tres-siguiente,
+$$
+C= e^{k_{\rm II}\ell}\bigg[F e^{\ii k_{\rm I}\ell}-De^{k_{\rm II}\ell}\bigg] = F e^{(\ii k_{\rm I}+k_{\rm II})\ell} -De^{2k_{\rm II}\ell}
+$${#eq-barrera-tres-siguiente-siguiente}
+y sustituimos en @eq-barrera-cuatro-siguiente
+$$
+\begin{align}
+-k_{\rm II} \bigg[ F e^{(\ii k_{\rm I}+k_{\rm II})\ell} -De^{2k_{\rm II}\ell} \bigg] + k_{\rm II} De^{k_{\rm II}\ell}&=\ii k_{\rm I} F e^{\ii k_{\rm I}\ell}\\
+D\bigg[ k_{\rm II} e^{2k_{\rm II}\ell} + k_{\rm II} e^{k_{\rm II}\ell} \bigg] &=\ii k_{\rm I} F e^{\ii k_{\rm I}\ell} +k_{\rm II} F e^{(\ii k_{\rm I}+k_{\rm II})\ell}\\
+D&=\left[\frac{\ii k_{\rm I} e^{\ii k_{\rm I}\ell} +k_{\rm II} e^{(\ii k_{\rm I}+k_{\rm II})\ell}}{ k_{\rm II} e^{k_{\rm II}\ell} \big( e^{k_{\rm II}\ell}+1 \big) }\right] F\\
+D&=\left[ \frac{  \frac{\ii k_{\rm I}}{k_{\rm II}} e^{\ii k_{\rm I}\ell-k_{\rm II}\ell} + e^{\ii k_{\rm I}\ell}}{ 1+e^{k_{\rm II}\ell} } \right] F\\
+D&=\left[ \frac{  1 + \frac{\ii k_{\rm I}}{k_{\rm II}} e^{-k_{\rm II}\ell} }{ 1+e^{k_{\rm II}\ell} } \right] e^{\ii k_{\rm I}\ell} F
+\end{align}
+$$
+
+Sutituimos en @eq-barrera-tres-siguiente-siguiente,
+$$
+\begin{align}
+C &= F e^{(\ii k_{\rm I}+k_{\rm II})\ell} -De^{2k_{\rm II}\ell}\\
+&= F e^{\ii k_{\rm I}\ell}e^{k_{\rm II}\ell} - \left[ \frac{  1 + \frac{\ii k_{\rm I}}{k_{\rm II}} e^{-k_{\rm II}\ell} }{ 1+e^{k_{\rm II}\ell} } \right] e^{\ii k_{\rm I}\ell} e^{2k_{\rm II}\ell} F\\
+&=Fe^{\ii k_{\rm I}\ell} \left[ \frac{ e^{k_{\rm II}\ell}(1+e^{k_{\rm II}\ell}) - e^{2k_{\rm II}\ell} - \frac{\ii k_{\rm I}}{k_{\rm II}} e^{k_{\rm II}\ell}}{1+e^{k_{\rm II}\ell}} \right]\\
+&= Fe^{\ii k_{\rm I}\ell}  \left[ \frac{ e^{k_{\rm II}\ell} - \frac{\ii k_{\rm I}}{k_{\rm II}} e^{k_{\rm II}\ell}}{1+e^{k_{\rm II}\ell}}  \right]\\
+&=Fe^{\ii k_{\rm I}\ell+k_{\rm II}\ell}  \left[ \frac{  1 - \frac{\ii k_{\rm I}}{k_{\rm II}} }{1+e^{k_{\rm II}\ell}}  \right]
+\end{align}
+$$
+
+De @eq-barrera-uno-siguiente,
+$$
+B = C+D-A
+$$
+Sustituimos en @eq-barrera-dos-siguiente,
+$$
+\begin{align}
+\ii k_{\rm I} ( A-C-D+A) &= -k_{\rm II}(C-D)\\
+2A &= -\frac{k_{\rm II}}{\ii k_{\rm I}}(C-D) +C+D \\
+A&=  \frac{1}{2} \bigg( 1+\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) C+\frac{1}{2} \bigg( 1-\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) D
+\end{align}
+$$
+
+Sustituimos los valores $C$ y $D$,
+$$
+\begin{align}
+A&=   \frac{1}{2} \bigg( 1+\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) Fe^{\ii k_{\rm I}\ell+k_{\rm II}\ell}  \left[ \frac{  1 - \frac{\ii k_{\rm I}}{k_{\rm II}} }{1+e^{k_{\rm II}\ell}}  \right] +\frac{1}{2} \bigg( 1-\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) \left[ \frac{  1 + \frac{\ii k_{\rm I}}{k_{\rm II}} e^{-k_{\rm II}\ell} }{ 1+e^{k_{\rm II}\ell} } \right] e^{\ii k_{\rm I}\ell} F\\
+&=\left\{ \frac{1}{2} \bigg( 1+\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) e^{k_{\rm II}\ell}  \left[ \frac{  1 - \frac{\ii k_{\rm I}}{k_{\rm II}} }{1+e^{k_{\rm II}\ell}}  \right] +\frac{1}{2} \bigg( 1-\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) \left[ \frac{  1 + \frac{\ii k_{\rm I}}{k_{\rm II}} e^{-k_{\rm II}\ell} }{ 1+e^{k_{\rm II}\ell} } \right]   \right\} e^{\ii k_{\rm I}\ell} F\\
+&=\left\{ \frac{1}{2} \bigg( 1+\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) \left[ \frac{  1 - \frac{\ii k_{\rm I}}{k_{\rm II}} }{1+e^{-k_{\rm II}\ell}}  \right] +\frac{1}{2} \bigg( 1-\frac{\ii k_{\rm II}}{k_{\rm I}}  \bigg) \left[ \frac{  1 + \frac{\ii k_{\rm I}}{k_{\rm II}} e^{-k_{\rm II}\ell} }{ 1+e^{k_{\rm II}\ell} } \right]   \right\} e^{\ii k_{\rm I}\ell} F
+\end{align}
+$$
+
+Una pregunta interesante es preguntarnos cuánto de la onda estacionaria atraviesa la barrera.
+
+```{python}
+#| label: fig-esquemaonda
+#| fig-cap: "Esquema de onda atravezando"
+#| echo: false
+
+from pylab import *
+
+plt.rcParams.update({
+    "text.usetex": True,
+    "font.family": "sans-serif",
+    "font.sans-serif": "Helvetica",
+})
+
+ℓ = 7 # (Å)
+x = linspace( 0-10, ℓ+10,1000 )
+U = zeros_like(x)
+U0 = 60
+U[logical_and(x>0,x<ℓ)] = U0
+# U[] = 100
+
+fig,ax = plt.subplots(figsize=(4,4))
+ax.plot(x,U,alpha=0.7,lw=4,c="#009B77")
+ax.fill_between(x,U,0,alpha=0.2,color="#009B77")
+ax.set_axis_off()
+ax.set_ylim((-10.0,99))
+ax.arrow(-10,0,20+ℓ,0 ,length_includes_head=True,head_width=3,head_length=1,color='k' )
+ax.arrow(  0,0,0,98 ,length_includes_head=True,head_width=1,head_length=3,color='k' )
+ax.plot([0,0],[-1,1],lw=2,c='k')
+ax.plot([ℓ,ℓ],[-1,1],lw=2,c='k')
+
+xI = linspace(-8,-4)
+kI = 2*2*pi/( -8-(-4) )
+ax.plot(xI,6*sin( kI*xI)+U0/2,color='k')
+ax.arrow(  -4,U0/2,1,0 ,length_includes_head=True,head_width=1,head_length=0.5,color='k' )
+ax.text( -8.5,U0/2+6+4, r"$Ae^{ {\rm i} k_{\rm I} x  }$", fontsize=16 )
+
+xIII = linspace(9,13)
+kIII = 2*2*pi/( 13-9 )
+ax.plot(xIII,6*sin( kIII*xIII)+U0/2,color='k')
+ax.arrow(  13,U0/2,1,0 ,length_includes_head=True,head_width=1,head_length=0.5,color='k' )
+ax.text(  8.5,U0/2+6+4, r"$Fe^{ {\rm i} k_{\rm I} x }$", fontsize=16 )
+
+ax.text(10+ℓ-2,3,r"$x$",fontsize=16)
+ax.text(ℓ,-8,r"$\ell$",fontsize=16,ha="center")
+ax.text(0,-8,r"$0$",fontsize=16,ha="center")
+ax.text(-6,92,r"$U(x)$",fontsize=16);
+
+
+
+```
+
+Definimos el coeficiente de transmisión,
+
+$$
+T = \frac{|F|^2}{|A|^2} = \frac{\displaystyle  \frac{4E}{U_0} \bigg( 1-\frac{E}{U_0} \bigg) }{ \displaystyle \frac{4 E}{U_0}\bigg( 1-\frac{E}{U_0} \bigg)+ \sinh (k_{\rm II}\ell) }
+$$
+
+
+```{python}
+#| label: fig-transmision
+#| fig-cap: "Transmision"
+#| echo: false
+
+from pylab import *
+
+
+ħ          = 0.6582119514           # [eV fs]
+e          = 1.602e-19              # 1 eV = 1.602e-19 J
+c          = 299792458              # [m/s]
+massfactor = e/c/c                  # 1 eV/c^2 = 1.79e-36 kg
+me         = 9.109e-31/massfactor   # [eV/c^2] = 0.5x10^6 eV/c^2
+c_nmfs     = 299.792458             # [nm/fs]
+ħ2_2me     = ħ*ħ*c_nmfs*c_nmfs/2/me # eV nm^2
+
+U0 = 2
+E  = linspace(1e-2,1.0)
+
+kII = sqrt( 2*(U0-E)/ħ2_2me )
+
+ℓ  = 1e-2 #nm
+Tuno  = ( 4*E/U0*( 1 - E/U0) )/ ( 4*E/U0*( 1-E/U0 ) + sinh( kII*ℓ ) )
+ℓ  = 1e-1 #nm
+Tdos  = ( 4*E/U0*( 1 - E/U0) )/ ( 4*E/U0*( 1-E/U0 ) + sinh( kII*ℓ ) )
+ℓ  = 1 #nm
+Ttres = ( 4*E/U0*( 1 - E/U0) )/ ( 4*E/U0*( 1-E/U0 ) + sinh( kII*ℓ ) )
+fig,ax = plt.subplots(figsize=(4,4))
+ax.set_title("Transmisión: "+r"$U_0={0:.1f}$ eV".format( U0,ℓ))
+ax.plot(E,Tuno,label=r"$\ell={0:.2f}$".format(1e-2))
+ax.plot(E,Tdos,label=r"$\ell={0:.2f}$".format(1e-1))
+ax.plot(E,Ttres,label=r"$\ell={0:.2f}$".format(1))
+ax.set_yscale("log")  
+ax.set_xlabel(r"$E$")
+ax.set_ylabel(r"$T$")
+ax.legend()
+plt.show()
+```
+:::
+
+
+
 $$
 \psi_{\rm Barrera} \sim e^{-k_{\rm II}x} \Rightarrow T \sim |\psi_{\rm Barrera}|^2\sim e^{-2 k_{\rm II}\ell } 
 $$
-
