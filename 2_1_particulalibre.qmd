@@ -8,6 +8,9 @@ $$
 \newcommand{\ii}{{\rm i}}
 $$
 
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Resolución de la partícula libre
+
 Una partícula libre es aquella que no está sometida a una fuerza, por lo que la energía potencial de una partícula es constante para todo valor de $x$ ($F_x=dU/dx=0$ $\Rightarrow U\iprn x \fprn = {\rm constante}$). Dado que tenemos la libertad de elección del nivel cero de energía, podemos elegir que $U\iprn x \fprn = {\rm cte.} = 0$, por lo que la ecuación de Schrödinger independiente (@eq-schroedinger-independiente-tiempo) esta dada por,
 
 $$
@@ -49,11 +52,21 @@ $$
 \psi\iprn x \fprn = c_1 e^{ {\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }+ c_2 e^{ -{\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }
 $$
 
+:::
+
+La solución de la partícula libre en mecánica cuántica está dada por,
+$$
+\psi\iprn x \fprn = c_1 e^{ {\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }+ c_2 e^{ -{\rm i}\sqrt{ \frac{2mE}{\hbar^2} } x }
+$$
+
 Resulta útil definir $k \equiv \sqrt{\frac{2mE}{\hbar^2}}$, que nos permite reescribir la solución general de la forma 
 
 $$
 \psi\iprn x \fprn = c_1 e^{ {\rm i}k x }+ c_2 e^{ -{\rm i} k x }
 $$
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Sólo $E\ge 0$
 
 ¿Cuáles son las condiciones de frontera que tiene que satisfacer la solución? Una que es razonable es que la densidad de probabilidad sea positiva; es decir, $|\psi\iprn x \fprn|^2=\psi^*\iprn x \fprn \psi\iprn x \fprn\geq 0$ y con un valor finito. Notemos que si $E<0$ esta condición no se cumple. 
 
@@ -69,6 +82,8 @@ Ambos comportamientos llevarían a que la densidad de probabilidad aumentaría s
 
 Consideramos que la energía potencial $U=0$, por lo que $E$ corresponde a sólo es energía cinética. 
 
+:::
+
 Las constantes $c_1$ y $c_2$ son arbitrarias y si intentamos evaluar la integral 
 $$
 \int_{-\infty}^{\infty}  \psi^*\iprn x \fprn \psi\iprn x \fprn dx \to \infty
@@ -83,6 +98,9 @@ Considermos el caso de $c_1=1$ y $c_2=0$, por lo que
 $$
 \psi\iprn x \fprn = e^{ {\rm i}k x }
 $$
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Gráfica 
 
 ```{python}
 
@@ -120,7 +138,7 @@ ax[1].legend(loc=0)
 ax[1].set_xlabel('x (m)');
 
 ```
-
+:::
 
 #### Visualización ${\rm Re}\Psi$
 Recordemos que la función de onda depende del tiempo y definimos $\omega\equiv E/\hbar $
@@ -128,6 +146,9 @@ Recordemos que la función de onda depende del tiempo y definimos $\omega\equiv 
 $$
 \Psi \iprn x,t \fprn = e^{-\ii \omega t } e^{ {\rm i}k x }
 $$
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Viualización ${\rm Re}\Psi$
 
 ```{python}
 from pylab import *
@@ -181,9 +202,12 @@ fig = go.Figure(
 
 fig.show()
 ```
+:::
 
 #### Visualización ${\rm Im}\Psi$
 
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Viualización ${\rm Re}\Psi$
 
 ```{python}
 from pylab import *
@@ -238,9 +262,13 @@ fig = go.Figure(
 fig.show()
 ```
 
+:::
 
 
 #### Visualización flechas
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Viualización $({\rm Re}\Psi, {\rm Im}\Psi)$
 ```{python}
 from pylab import *
 import pandas as pd
@@ -304,6 +332,8 @@ fig.show()
 
 ```
 
+:::
+
 ### Caso $c_1=0$ y $c_2=1$
 
 Considermos el caso de $c_1=1$ y $c_2=0$, por lo que 
@@ -311,16 +341,15 @@ $$
 \psi\iprn x \fprn = e^{ -{\rm i}k x }
 $$
 
-
-
-
-
 #### Visualización ${\rm Re}\Psi$ y ${\rm Im}\Psi$
 Recordemos que la función de onda depende del tiempo y definimos $\omega\equiv E/\hbar $
 
 $$
 \Psi \iprn x,t \fprn = e^{-\ii \omega t } e^{ -{\rm i}k x }
 $$
+
+::: {.callout-note appearance="simple" icon=false collapse="true"}
+## Viualización ${\rm Re}\Psi$ e ${\rm Im}\Psi$
 
 ```{python}
 from pylab import *
@@ -378,3 +407,4 @@ fig = go.Figure(
 fig.show()
 ```
 
+:::
